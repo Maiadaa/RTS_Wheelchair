@@ -10,13 +10,30 @@ package Model;
  */
 public class NavigationSensor {
     
-    private String direction;
-    
-    public NavigationSensor(String direction){
-        this.direction = direction;
+    private String currentCoordinates;
+    private String Destination;
+    private double distanceToObstacle;
+
+    public String getCurrentCoordinates() {
+        return currentCoordinates;
+    }
+
+    public String getDestination() {
+        return Destination;
+    }
+
+    public double getDistanceToObstacle() {
+        return distanceToObstacle;
     }
     
-    public String getDirection(){
-        return direction;
+    public String detectLocation(){
+        
+        return null;
+        
     }
+    
+    public double measureDistance() {
+        return 0;
+    }
+    
 }
