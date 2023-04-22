@@ -9,5 +9,23 @@ package Model;
  * @author mahmo
  */
 public class Joystick {
+    private String Direction;
+
+    public Joystick(String Direction) {
+        this.Direction = Direction;
+    }
+     
+    public String getDirection() {
+        return Direction;
+    }
     
+    public void ControlMovement (String direction){
+        
+    }
+    
+    public double DetectSpeed(){
+        
+        return 0;
+        
+    }
 }
