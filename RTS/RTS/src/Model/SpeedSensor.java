@@ -15,11 +15,16 @@ public class SpeedSensor {
         this.Speed = Speed;
     }
     
+    public double getSpeed() {
+        return Speed;
+    }
+    
     public String DisplaySpeed(double Speed){
         
         return null;
         
     }
+
     public String DetectSpeed(){
         
         return null;
