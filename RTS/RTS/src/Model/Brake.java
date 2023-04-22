@@ -9,5 +9,29 @@ package Model;
  * @author mahmo
  */
 public class Brake {
+    boolean stopCommand;
+
+    public Brake() {
+    }
+
+    public Brake(boolean stopCommand) {
+        this.stopCommand = stopCommand;
+    }
+
+    public boolean isStopCommand() {
+        return stopCommand;
+    }
+
+    public void setStopCommand(boolean stopCommand) {
+        this.stopCommand = stopCommand;
+    }
+    
+    public void decelerate (){
+        
+    }
+    
+    public double detectSpeed(){
+        return 0.0;
+    }
     
 }
