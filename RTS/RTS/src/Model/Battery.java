@@ -9,5 +9,29 @@ package Model;
  * @author mahmo
  */
 public class Battery {
+    private double Percentage;
+    private String Status;
     
+    public Battery(double Percentage, String Status) {
+        this.Percentage = Percentage;
+        this.Status = Status;
+    }
+    public double getPercentage() {
+        return Percentage;
+    }
+
+    public String getStatus() {
+        return Status;
+    }
+    public double MeasurePercentage(){
+        
+        return 0;
+        
+    }
+    
+    public String SetStatus(){
+        
+        return null;
+        
+    }
 }

@@ -9,5 +9,19 @@ package Model;
  * @author mahmo
  */
 public class Processor {
+    private double Speed;
+
+    public Processor(double Speed) {
+        this.Speed = Speed;
+    }
     
+    public double getSpeed() {
+        return Speed;
+    }
+    
+    public double ControlSpeed(double speed){
+        
+        return 0;
+        
+    }
 }

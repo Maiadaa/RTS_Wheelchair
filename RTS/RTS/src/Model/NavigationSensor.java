@@ -10,4 +10,13 @@ package Model;
  */
 public class NavigationSensor {
     
+    private String direction;
+    
+    public NavigationSensor(String direction){
+        this.direction = direction;
+    }
+    
+    public String getDirection(){
+        return direction;
+    }
 }
