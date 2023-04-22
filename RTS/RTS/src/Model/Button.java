@@ -9,5 +9,25 @@ package Model;
  * @author mahmo
  */
 public class Button {
+    private boolean StartCommand;
+
+    public Button() {
+    }
+
+    public Button(boolean StartCommand) {
+        this.StartCommand = StartCommand;
+    }
+
+    public boolean isStartCommand() {
+        return StartCommand;
+    }
+
+    public void setStartCommand(boolean StartCommand) {
+        this.StartCommand = StartCommand;
+    }
     
+    public void StartMovement(boolean command)
+    {
+        
+    }
 }
