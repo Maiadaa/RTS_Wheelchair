@@ -16,8 +16,8 @@ public class Joystick {
 
     public Joystick(WheelChair chair) {
         this.chair = chair;
-        this.Direction = "Forward";
-        System.out.println("Default movement is moving forward");
+        this.Direction = "Idle";
+        System.out.println("Engine On but idle movement");
     }
 //
 //    public Joystick(String Direction) {

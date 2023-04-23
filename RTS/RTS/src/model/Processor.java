@@ -4,27 +4,32 @@
  */
 package model;
 
+import java.util.Random;
+
 /**
  *
  * @author mahmo
  */
 public class Processor {
     private double Speed;
-
+    
+    private WheelChair chair;
+    private Wheel wheel;
     public Processor() {
     }
 
-    public Processor(double Speed) {
-        this.Speed = Speed;
+    public Processor(double Speed, WheelChair chair) {
+        this.chair=chair;
+        this.Speed = 0.0;
+        //the chair is initially idle, speed is 0.0
     }
     
     public double getSpeed() {
         return Speed;
     }
     
-    public double ControlSpeed(double speed){
-        
-        return 0;
-        
+    public void ControlSpeed(double speed){
+        this.Speed = speed;
+        System.out.println("The speed is: " + speed);
     }
 }

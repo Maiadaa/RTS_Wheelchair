@@ -10,14 +10,15 @@ package model;
  */
 public class ObstacleSensor {
     private boolean Obstacle;
+    private WheelChair wheel;
+
+    public ObstacleSensor(boolean Obstacle, WheelChair wheel) {
+        this.Obstacle = false;
+        this.wheel = wheel;
+    }
 
     public ObstacleSensor() {
     }
-
-    public ObstacleSensor(boolean Obstacle) {
-        this.Obstacle = Obstacle;
-    }
-
     
     public void setObstacle(boolean Obstacle) {
         this.Obstacle = Obstacle;
@@ -27,16 +28,24 @@ public class ObstacleSensor {
         return Obstacle;
     }
     
-    
     public boolean DetectObstacle()
     {
-        return true;
+       if (Obstacle){
+            if (this.wheel.getNavSensor().getDistanceToObstacle() < 2){
+                this.wheel.getBrake().decelerate();
+                this.wheel.getJoystick().ControlMovement("left");
+//              wheel.getGui().getObstacle().setText("ObstacleDetected");
+            }
+            return true;
+        }
+       else
+           return false;
     }
     
-    public double DetectSpeed()
-    {
-        return 0;
-    }
+//    public double DetectSpeed()
+//    {
+//        return 0;
+//    }
     
     
 }
