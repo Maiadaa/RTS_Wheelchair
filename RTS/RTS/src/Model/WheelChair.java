@@ -43,7 +43,6 @@ public class WheelChair {
         this.wheel = new Wheel();
     }
     
-    
 
     public WheelChairScreen getGui() {
         return gui;

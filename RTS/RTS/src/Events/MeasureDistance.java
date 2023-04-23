@@ -8,6 +8,16 @@ package Events;
  *
  * @author PC
  */
-public class NewClass {
+public class MeasureDistance {
+    private double distance;
+
+    public MeasureDistance(double distance) {
+        this.distance = distance;
+    }
+
+    public double getDistance() {
+        return distance;
+    }
+    
     
 }
