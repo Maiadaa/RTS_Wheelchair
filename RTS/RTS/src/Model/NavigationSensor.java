@@ -14,6 +14,9 @@ public class NavigationSensor {
     private String Destination;
     private double distanceToObstacle;
 
+    public NavigationSensor() {
+    }
+
     public String getCurrentCoordinates() {
         return currentCoordinates;
     }

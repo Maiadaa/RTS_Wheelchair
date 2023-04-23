@@ -11,6 +11,9 @@ package Model;
 public class ObstacleSensor {
     private boolean Obstacle;
 
+    public ObstacleSensor() {
+    }
+
     public ObstacleSensor(boolean Obstacle) {
         this.Obstacle = Obstacle;
     }

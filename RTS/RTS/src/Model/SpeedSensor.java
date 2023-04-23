@@ -11,6 +11,9 @@ package Model;
 public class SpeedSensor {
     private double Speed;
 
+    public SpeedSensor() {
+    }
+
     public SpeedSensor(double Speed) {
         this.Speed = Speed;
     }

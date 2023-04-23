@@ -11,6 +11,9 @@ package Model;
 public class Processor {
     private double Speed;
 
+    public Processor() {
+    }
+
     public Processor(double Speed) {
         this.Speed = Speed;
     }

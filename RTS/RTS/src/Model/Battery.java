@@ -11,6 +11,11 @@ package Model;
 public class Battery {
     private double Percentage;
     private String Status;
+
+    public Battery() {
+    }
+    
+    
     
     public Battery(double Percentage, String Status) {
         this.Percentage = Percentage;

@@ -11,6 +11,10 @@ package Model;
 public class Joystick {
     private String Direction;
 
+    public Joystick() {
+    }
+    
+
     public Joystick(String Direction) {
         this.Direction = Direction;
     }

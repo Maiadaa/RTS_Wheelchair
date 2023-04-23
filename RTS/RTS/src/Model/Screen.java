@@ -14,6 +14,9 @@ public class Screen {
     private String BatteryMessage;
     private String DistanceMessage;
 
+    public Screen() {
+    }
+
     public Screen(String SpeedMessage, String ObstacleMessage, String BatteryMessage, String DistanceMessage) {
         this.SpeedMessage = SpeedMessage;
         this.ObstacleMessage = ObstacleMessage;
