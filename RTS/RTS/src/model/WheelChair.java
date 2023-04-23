@@ -14,6 +14,9 @@ public class WheelChair {
 
     private WheelChairScreen gui;
     
+     // This acts as our ON/OFF switch
+    private boolean state = false;
+    
     private Battery battery;
     private Brake brake;
     private Button button;
@@ -33,7 +36,7 @@ public class WheelChair {
         
         this.battery = new Battery();
         this.brake = new Brake();
-        this.button = new Button();
+        this.button = new Button(this);
         this.joystick = new Joystick(this);
         this.navSensor = new NavigationSensor();
         this.obsSensor = new ObstacleSensor();
@@ -88,6 +91,8 @@ public class WheelChair {
         return wheel;
     }
     
-    
+    public boolean isEngineOn() {
+        return state;
+    }
     
 }

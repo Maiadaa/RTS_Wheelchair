@@ -17,8 +17,7 @@ import events.DetectLocationCoordinates;
 import events.DetectObstacle;
 import events.MeasureBatteryPercentage;
 import events.MeasureDistance;
-import events.StartMovement;
-import events.StopMovement;
+import events.PowerEvent;
 
 /**
  *
@@ -39,8 +38,7 @@ public class Config {
         engine.getEPAdministrator().getConfiguration().addEventType(DetectObstacle.class);
         engine.getEPAdministrator().getConfiguration().addEventType(MeasureBatteryPercentage.class);
         engine.getEPAdministrator().getConfiguration().addEventType(MeasureDistance.class);
-        engine.getEPAdministrator().getConfiguration().addEventType(StartMovement.class);
-        engine.getEPAdministrator().getConfiguration().addEventType(StopMovement.class);
+        engine.getEPAdministrator().getConfiguration().addEventType(PowerEvent.class);
 
         System.out.println("Events Successfully Registered.");
     }

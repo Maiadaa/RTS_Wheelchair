@@ -9,25 +9,43 @@ package model;
  * @author mahmo
  */
 public class Button {
-    private boolean StartCommand;
 
-    public Button() {
-    }
+//    private boolean StartCommand;
 
-    public Button(boolean StartCommand) {
-        this.StartCommand = StartCommand;
-    }
+    private boolean state;
+    private WheelChair chair;
 
-    public boolean isStartCommand() {
-        return StartCommand;
+    public Button(WheelChair chair) {
+        this.state = false;
+        this.chair = chair;
     }
 
-    public void setStartCommand(boolean StartCommand) {
-        this.StartCommand = StartCommand;
+    public void setState(boolean state) {
+        this.state = state;
+        if (state) {
+//            chair.getGui().getLedStatusTxt().setText("ON");
+        } else {
+//            chair.getGui().getLedStatusTxt().setText("OFF");
+        }
     }
-    
-    public void StartMovement(boolean command)
-    {
-        
-    }
+
+//    public Button() {
+//    }
+//
+//    public Button(boolean StartCommand) {
+//        this.StartCommand = StartCommand;
+//    }
+//
+//    public boolean isStartCommand() {
+//        return StartCommand;
+//    }
+//
+//    public void setStartCommand(boolean StartCommand) {
+//        this.StartCommand = StartCommand;
+//    }
+//
+//    public void StartMovement(boolean command) {
+//
+//    }
+
 }

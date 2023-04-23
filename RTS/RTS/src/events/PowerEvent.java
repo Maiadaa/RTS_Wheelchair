@@ -8,6 +8,15 @@ package events;
  *
  * @author PC
  */
-public class StartMovement {
+public class PowerEvent {
+    private boolean state;
     
+    public PowerEvent(boolean state)
+    {
+        this.state = state;
+    }
+    
+    public boolean getState() {
+        return state;
+    }
 }
