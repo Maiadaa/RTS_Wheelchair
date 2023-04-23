@@ -9,27 +9,36 @@ package model;
  * @author mahmo
  */
 public class Joystick {
+
     private String Direction;
 
-    public Joystick() {
-    }
-    
+    private WheelChair chair;
 
-    public Joystick(String Direction) {
-        this.Direction = Direction;
+    public Joystick(WheelChair chair) {
+        this.chair = chair;
+        this.Direction = "Forward";
+        System.out.println("Default movement is moving forward");
     }
-     
+//
+//    public Joystick(String Direction) {
+//        this.Direction = Direction;
+//    }
+//     
+
+    public void ControlMovement(String direction) {
+        // change direction 
+        this.Direction = direction;
+        System.out.println("Changing direction to move " + direction);
+    }
+
+//    public double DetectSpeed() {
+//        this.chair.getSpeedSensor().
+//        return 0;
+//
+//    }
+
     public String getDirection() {
         return Direction;
     }
-    
-    public void ControlMovement (String direction){
-        
-    }
-    
-    public double DetectSpeed(){
-        
-        return 0;
-        
-    }
+
 }
