@@ -11,6 +11,10 @@ package model;
 public class SpeedSensor {
     private double Speed;
 
+    public void setSpeed(double Speed) {
+        this.Speed = Speed;
+    }
+
     public SpeedSensor() {
     }
 
@@ -27,9 +31,7 @@ public class SpeedSensor {
         return null;
         
     }
-
-    public String DetectSpeed(){
-        
+    public Double DetectSpeed(){
         return null;
         
     }

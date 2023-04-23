@@ -12,24 +12,39 @@ import java.util.Random;
  */
 public class Processor {
     private double Speed;
-    
+    private boolean cruising;
     private WheelChair chair;
-    private Wheel wheel;
+    
     public Processor() {
     }
 
-    public Processor(double Speed, WheelChair chair) {
+    public Processor(double speed, boolean cruise, WheelChair chair) {
         this.chair=chair;
-        this.Speed = 0.0;
-        //the chair is initially idle, speed is 0.0
+        this.cruising = cruise;
+        this.Speed = speed;
     }
     
     public double getSpeed() {
         return Speed;
     }
-    
+
+    public boolean CruisingButton () {
+        if (cruising){
+//          this.chair.getGui().getCruiseText().setText("Cruising ON");
+            return true;
+        }
+        else{
+//            this.chair.getGui().getCruiseText().setText("Cruising OFF");
+            return false;
+        }
+    }
+        
     public void ControlSpeed(double speed){
-        this.Speed = speed;
-        System.out.println("The speed is: " + speed);
+        if (this.CruisingButton()){
+            double CSpeed = this.chair.getSpeedSensor().DetectSpeed();
+            this.chair.getSpeedSensor().setSpeed(CSpeed);
+            this.chair.getSpeedSensor().DisplaySpeed(CSpeed);
+            System.out.println("Cruising mode on");
+        }
     }
 }
