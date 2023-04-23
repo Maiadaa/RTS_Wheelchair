@@ -2,21 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Events;
+package events;
 
 /**
  *
  * @author PC
  */
-public class ControlMovement {
-    private String direction;
+public class Accelerate {
+    private double speed;
 
-    public ControlMovement(String direction) {
-        this.direction = direction;
+    public Accelerate(double speed) {
+        this.speed = speed;
     }
 
-    public String getDirection() {
-        return direction;
+    public double getSpeed() {
+        return speed;
     }
     
 }

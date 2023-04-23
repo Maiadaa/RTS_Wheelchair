@@ -2,22 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Events;
+package events;
 
 /**
  *
  * @author PC
  */
-public class Decelerate {
-    
-    private double speed;
+public class MeasureDistance {
+    private double distance;
 
-    public Decelerate(double speed) {
-        this.speed = speed;
+    public MeasureDistance(double distance) {
+        this.distance = distance;
     }
 
-    public double getSpeed() {
-        return speed;
+    public double getDistance() {
+        return distance;
     }
     
     
