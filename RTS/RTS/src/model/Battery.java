@@ -8,8 +8,8 @@ package model;
  *
  * @author mahmo
  */
-public class Battery {
-    private double Percentage;
+public class Battery extends Thread{
+    private double Percentage = 100;
     private String Status;
 
     public Battery() {
@@ -28,15 +28,27 @@ public class Battery {
     public String getStatus() {
         return Status;
     }
-    public double MeasurePercentage(){
-        
-        return 0;
-        
+    public void MeasurePercentage(){
+      this.setPercentage(--Percentage);
     }
-    
-    public String SetStatus(){
-        
-        return null;
-        
+
+    public void setPercentage(double Percentage) {
+        this.Percentage = Percentage;
+    }
+
+    public void setStatus(String Status) {
+        this.Status = Status;
+    }
+    @Override
+    public void run(){
+        while (true) {
+            try {
+                Thread.sleep(30000);
+                MeasurePercentage();
+                System.out.println(Percentage);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

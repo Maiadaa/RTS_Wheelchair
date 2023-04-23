@@ -34,7 +34,6 @@ public class Config {
         engine.getEPAdministrator().getConfiguration().addEventType(Decelerate.class);
         engine.getEPAdministrator().getConfiguration().addEventType(DetectCarSpeed.class);
         engine.getEPAdministrator().getConfiguration().addEventType(DetectLocationCoordinates.class);
-        engine.getEPAdministrator().getConfiguration().addEventType(DetectCarSpeed.class);
         engine.getEPAdministrator().getConfiguration().addEventType(DetectObstacle.class);
         engine.getEPAdministrator().getConfiguration().addEventType(MeasureBatteryPercentage.class);
         engine.getEPAdministrator().getConfiguration().addEventType(MeasureDistance.class);

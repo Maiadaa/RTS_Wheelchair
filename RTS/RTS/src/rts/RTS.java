@@ -4,6 +4,10 @@
  */
 package rts;
 
+import model.SpeedSensor;
+import model.Battery;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 /**
  *
  * @author mahmo
@@ -14,7 +18,15 @@ public class RTS {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        /*Logger.getRootLogger().setLevel(Level.OFF);
+        Config.registerEvents();
+        Config.createStatement("select speed from DetectCarSpeed").setSubscriber(new Object(){
+            public void update(double speed){
+                System.out.println("Speed: " + speed);
+            }
+        });*/
+        Battery b = new Battery();
+        b.run();
     }
     
 }
