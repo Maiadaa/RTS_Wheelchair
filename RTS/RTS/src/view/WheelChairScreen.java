@@ -4,9 +4,11 @@
  */
 package view;
 
+import events.PowerEvent;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import rts.Config;
 
 /**
  *
@@ -32,8 +34,6 @@ public class WheelChairScreen extends javax.swing.JFrame {
     public void setOffBtn(JButton offBtn) {
         this.offBtn = offBtn;
     }
-    
-    
 
     public void setAccelerateBtn(JButton accelerateBtn) {
         this.accelerateBtn = accelerateBtn;
@@ -273,6 +273,11 @@ public class WheelChairScreen extends javax.swing.JFrame {
         jLabel6.setText("Battery %");
 
         onBtn.setText("ON");
+        onBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -377,12 +382,19 @@ public class WheelChairScreen extends javax.swing.JFrame {
 
     private void offBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_offBtnActionPerformed
         // TODO add your handling code here:
+        Config.sendEvent(new PowerEvent(false));
+
     }//GEN-LAST:event_offBtnActionPerformed
+
+    private void onBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onBtnActionPerformed
+        // TODO add your handling code here:
+
+        Config.sendEvent(new PowerEvent(true));
+    }//GEN-LAST:event_onBtnActionPerformed
 
     /**
      * @param args the command line arguments
      */
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton accelerateBtn;

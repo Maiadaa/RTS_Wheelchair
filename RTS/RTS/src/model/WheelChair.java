@@ -17,7 +17,7 @@ public class WheelChair {
     private WheelChairScreen gui;
 
     // This acts as our ON/OFF switch
-    private boolean state ;
+    private boolean state = false;
 
     private Battery battery;
     private Brake brake;
@@ -48,20 +48,11 @@ public class WheelChair {
         this.wheel = new Wheel();
     }
 
-    public void setStateOn() {
-        this.button.stateOn();
-        gui.getOnBtn().setEnabled(false);
-                gui.getOffBtn().setEnabled(true);
-
-
-    }
-    
-        public void setStateOff() {
-        this.button.stateOff();
-        gui.getOffBtn().setEnabled(true);
-                gui.getOnBtn().setEnabled(false);
-
-
+    public void setState(boolean state) {
+        this.state = state;
+        this.button.setState(state);
+        gui.getOnBtn().setEnabled(!state);
+        gui.getOffBtn().setEnabled(state);
     }
 
     public WheelChairScreen getGui() {

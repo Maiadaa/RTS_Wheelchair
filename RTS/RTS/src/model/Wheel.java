@@ -13,7 +13,7 @@ import java.util.Random;
 public class Wheel {
     boolean stopCommand;
     double speed;
-    WheelChair chair = new WheelChair();
+    WheelChair chair;
     
     
     public Wheel() {

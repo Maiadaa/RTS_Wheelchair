@@ -11,7 +11,6 @@ import model.Battery;
 import model.NavigationSensor;
 import model.WheelChair;
 
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
@@ -40,16 +39,18 @@ public class RTS {
 //                        chair.tempSignal(temp);
 //                    }
 //                });
+
         Config.createStatement("select state from PowerEvent")
                 .setSubscriber(new Object() {
-            public void update(boolean state) {
-                chair.setStateOn();
-                                chair.setStateOff();
+                    public void update(boolean state) {
+                        chair.setState(state);
+                    }
+                });
+        
+        
+        
+                
 
-            }
-        });
-        Config.sendEvent(new PowerEvent(true));
     }
 
 }
-

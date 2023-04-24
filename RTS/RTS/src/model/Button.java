@@ -16,27 +16,25 @@ public class Button {
 //    private boolean StartCommand;
     private boolean state;
     private WheelChair chair;
-    
+
     public Button(WheelChair chair) {
         this.state = false;
         this.chair = chair;
     }
-    
-    public Button(){
-        
+
+    public void setState(boolean state) {
+        this.state = state;
+        if (state) {
+            chair.getGui().getOffBtn().setEnabled(true);
+            chair.getGui().getOnBtn().setEnabled(false);    
+
+        } else {
+            chair.getGui().getOnBtn().setEnabled(true);
+            chair.getGui().getOffBtn().setEnabled(false);
+        }
+
     }
 
-    public void stateOn() {
-        this.state = true;
-        Config.sendEvent(new PowerEvent(state));
-    }
-    
-        public void stateOff() {
-        this.state = false;
-        Config.sendEvent(new PowerEvent(state));
-    }
-
-        
 //    public Button() {
 //    }
 //
