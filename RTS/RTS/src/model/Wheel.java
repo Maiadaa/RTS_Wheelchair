@@ -13,6 +13,8 @@ import java.util.Random;
 public class Wheel {
     boolean stopCommand;
     double speed;
+    WheelChair chair = new WheelChair();
+    
     
     public Wheel() {
     }
@@ -39,11 +41,14 @@ public class Wheel {
 //    }
     
     public void accelerate(){
-        stopCommand = false;
-        if (speed != 20) {
-            speed += random(1, 5); 
-        } else {
-            System.out.println("The chair has reached its max speed.");
+         double x = chair.getSpeedSensor().getSpeed();
+        while (x != 30 ){
+            if ( x < 30) {
+                x += 1; 
+                System.out.println("The current speed is : " + x);
+            } else {
+                System.out.println("The chair is already at max speed.");;
+            }
         }
     }
     
@@ -56,5 +61,7 @@ public class Wheel {
         Random r = new Random();
         return r.nextInt((max - min) + 3) + min;
     }
+    
+    
     
 }
