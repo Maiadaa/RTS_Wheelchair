@@ -26,21 +26,175 @@ public class WheelChairScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        onBtn = new javax.swing.JButton();
+        offBtn = new javax.swing.JButton();
+        currentTempTxt = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        onBtn2 = new javax.swing.JButton();
+        onBtn3 = new javax.swing.JButton();
+        onBtn4 = new javax.swing.JButton();
+        onBtn5 = new javax.swing.JButton();
+        onBtn6 = new javax.swing.JButton();
+        onBtn8 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        onBtn.setText("ON");
+        onBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onBtnActionPerformed(evt);
+            }
+        });
+
+        offBtn.setText("OFF");
+        offBtn.setEnabled(false);
+        offBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                offBtnActionPerformed(evt);
+            }
+        });
+
+        currentTempTxt.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        currentTempTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        currentTempTxt.setText("18");
+        currentTempTxt.setEnabled(false);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel1.setText("Current Speed");
+
+        onBtn2.setText("Brake");
+        onBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onBtn2ActionPerformed(evt);
+            }
+        });
+
+        onBtn3.setText(">");
+        onBtn3.setPreferredSize(new java.awt.Dimension(40, 40));
+        onBtn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onBtn3ActionPerformed(evt);
+            }
+        });
+
+        onBtn4.setText("Accelerate");
+
+        onBtn5.setText("^");
+        onBtn5.setPreferredSize(new java.awt.Dimension(40, 40));
+        onBtn5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onBtn5ActionPerformed(evt);
+            }
+        });
+
+        onBtn6.setText("<");
+        onBtn6.setPreferredSize(new java.awt.Dimension(40, 40));
+        onBtn6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onBtn6ActionPerformed(evt);
+            }
+        });
+
+        onBtn8.setText("v");
+        onBtn8.setPreferredSize(new java.awt.Dimension(40, 40));
+        onBtn8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onBtn8ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(currentTempTxt))
+                        .addGap(97, 97, 97))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(onBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(onBtn6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(onBtn8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(onBtn5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(19, 19, 19)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(offBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(onBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(onBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(onBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(onBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(offBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(currentTempTxt)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
+                .addComponent(onBtn5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(onBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(onBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(onBtn6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(onBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(85, 85, 85))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(onBtn8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void onBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onBtnActionPerformed
+        Config.sendEvent(new PowerEvent(true));
+    }//GEN-LAST:event_onBtnActionPerformed
+
+    private void offBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_offBtnActionPerformed
+        Config.sendEvent(new PowerEvent(false));
+    }//GEN-LAST:event_offBtnActionPerformed
+
+    private void onBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onBtn2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_onBtn2ActionPerformed
+
+    private void onBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onBtn3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_onBtn3ActionPerformed
+
+    private void onBtn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onBtn5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_onBtn5ActionPerformed
+
+    private void onBtn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onBtn6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_onBtn6ActionPerformed
+
+    private void onBtn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onBtn8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_onBtn8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -48,5 +202,15 @@ public class WheelChairScreen extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField currentTempTxt;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton offBtn;
+    private javax.swing.JButton onBtn;
+    private javax.swing.JButton onBtn2;
+    private javax.swing.JButton onBtn3;
+    private javax.swing.JButton onBtn4;
+    private javax.swing.JButton onBtn5;
+    private javax.swing.JButton onBtn6;
+    private javax.swing.JButton onBtn8;
     // End of variables declaration//GEN-END:variables
 }
