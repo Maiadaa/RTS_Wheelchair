@@ -17,11 +17,18 @@ import rts.Config;
 public class NavigationSensor extends Thread {
     
     private String currentCoordinates;
+        private boolean Obstacle = true;
+        
+         
     private String Destination;
     private double distanceToObstacle;
-    private ObstacleSensor obSensor;
     private WheelChair chair;
 
+    String [] arr = {"right", "left"};
+         Random r1 = new Random();
+
+         // randomly selects an index from the arr
+         int select = r1.nextInt(arr.length); 
     private int random(int min, int max) {
         
         if (min >= max) {
@@ -30,6 +37,10 @@ public class NavigationSensor extends Thread {
         
         Random r = new Random();
         return r.nextInt((max - min) + 1) + min;
+    }
+
+    public NavigationSensor(WheelChair chair) {
+        this.chair = chair;
     }
     
     public NavigationSensor() {
@@ -59,6 +70,16 @@ public class NavigationSensor extends Thread {
         } 
     }
     
+    public void DetectObstacle(double distance)
+    {
+        if (Obstacle){
+            if (distance < 3.0){
+                this.chair.getBrake().decelerate();
+                this.chair.getJoystick().ControlMovement("right");
+//              wheel.getGui().getObstacle().setText("ObstacleDetected");
+            }
+        }
+    }
     public void measureDistance() {
 //        double obLoc = obSensor.DetectObstacleLocation(20,60);
 //        double myLoc = detectLocation(15,60);
@@ -67,8 +88,8 @@ public class NavigationSensor extends Thread {
 //            Config.sendEvent(new MeasureDistance(obLoc-myLoc));
 //        }
 //        return 0;
-        distanceToObstacle = random(1, 10);
-        chair.getObsSensor().DetectObstacle();    
+        distanceToObstacle = random(1, 5);
+        DetectObstacle(distanceToObstacle);
     }
 
     @Override
@@ -76,9 +97,11 @@ public class NavigationSensor extends Thread {
     {
         while (true) {
             try {
-                this.sleep(4000);
-                measureDistance();
-                System.out.println("Distance to obstacle = " + distanceToObstacle);
+                this.sleep(3000);
+                while(this.chair.getSpeedSensor().DetectSpeed() != 0){
+                    measureDistance();
+                    System.out.println("The distance is : " + distanceToObstacle);
+                }
             } catch (InterruptedException ex) {
                 Logger.getLogger(NavigationSensor.class.getName()).log(Level.SEVERE, null, ex);
             }

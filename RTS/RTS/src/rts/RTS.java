@@ -30,7 +30,7 @@ public class RTS {
 
         // Create Kettle
         final WheelChair chair = new WheelChair();
-        final NavigationSensor loc = new NavigationSensor();
+        final NavigationSensor loc = new NavigationSensor(chair);
 
 //        Config.createStatement("select temp from TempSensorReading")
 //                .setSubscriber(new Object() {
@@ -38,16 +38,13 @@ public class RTS {
 //                        chair.tempSignal(temp);
 //                    }
 //                });
-        Config.createStatement("select state from PowerEvent")
-                .setSubscriber(new Object() {
-            public void update(boolean state) {
-                chair.isEngineOn();
-            }
-        });
+//        Config.createStatement("select state from PowerEvent")
+//                .setSubscriber(new Object() {
+//            public void update(boolean state) {
+//                chair.isEngineOn();
+//            }
+//        });
         loc.run();
-        
-        
-
     }
 
 }

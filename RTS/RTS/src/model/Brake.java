@@ -5,50 +5,63 @@
 package model;
 
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author mahmo
  */
-public class Brake {
-    boolean stopCommand;
+public class Brake extends Thread {
+//    boolean stopCommand;
     double speed;
+    WheelChair chair = new WheelChair();
 
-    public Brake() {
-    }
 
-    public Brake(boolean stopCommand) {
-        this.stopCommand = stopCommand;
+    public Brake(WheelChair chair) {
+//        this.stopCommand = stopCommand;
+        this.chair = chair;
     }
-
-    public boolean isStopCommand() {
-        return stopCommand;
-    }
-
-    public void setStopCommand(boolean stopCommand) {
-        this.stopCommand = stopCommand;
-    }
+//
+//    public boolean isStopCommand() {
+//        return stopCommand;
+//    }
+//
+//    public void setStopCommand(boolean stopCommand) {
+//        this.stopCommand = stopCommand;
+//    }
     
     public void decelerate (){
-        if (speed != 0) {
-            speed -= random(1, 5); 
-        } else {
-            System.out.println("The chair is already stopped, speed is 0.");;
+        double x = chair.getSpeedSensor().getSpeed();
+        while (x != 0 ){
+            if ( x > 0) {
+                x -= 1; 
+                System.out.println("The current speed is : " + x);
+            } else {
+                System.out.println("The chair is already stopped, speed is 0.");;
+            }
         }
     }
-    
-    public double detectSpeed(){
-        return 0.0;
-    }
-    
-    private int random(int min, int max) {
-        
-        if (min >= max) {
-            throw new IllegalArgumentException("max must be greater than min");
+//    
+//    public double detectSpeed(){
+//        return 0.0;
+//    }
+//    
+    @Override
+    public void run()
+    {
+        while (true) {
+            try {
+                this.sleep(1000);
+                decelerate();
+//                if(speed>0){
+//                    System.out.println("Your speed now is : " + speed);
+//                }else
+//                    System.out.println("Your speed now is 0");
+            } catch (InterruptedException ex) {
+                Logger.getLogger(NavigationSensor.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
         }
-        
-        Random r = new Random();
-        return r.nextInt((max - min) + 3) + min;
     }
-    
 }

@@ -32,11 +32,11 @@ public class ObstacleSensor {
         return Obstacle;
     }
     
-    public boolean DetectObstacle()
+    public boolean DetectObstacle(double distance)
     {
         System.out.println("samo 3aleko");
        if (Obstacle){
-            if (this.wheel.getNavSensor().getDistanceToObstacle() < 3){
+            if (distance < 3.0){
                 System.out.println("aloooo");
                 this.wheel.getBrake().decelerate();
                 this.wheel.getJoystick().ControlMovement("left");
@@ -44,7 +44,7 @@ public class ObstacleSensor {
                     this.wheel.getBrake().decelerate();
                     this.wheel.getJoystick().ControlMovement("right");
                 }
-                DetectObstacle();
+                DetectObstacle(distance);
 //              wheel.getGui().getObstacle().setText("ObstacleDetected");
             }
             return true;
