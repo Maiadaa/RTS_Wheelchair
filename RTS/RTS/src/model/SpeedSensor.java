@@ -45,8 +45,10 @@ public class SpeedSensor extends Thread{
         
     }
 
-    public void DetectSpeed(){
-        Config.sendEvent(new DetectCarSpeed(randomSpeed(0, 15)));
+    public double DetectSpeed(){
+        double speed = randomSpeed(0, 15);
+        Config.sendEvent(new DetectCarSpeed(speed));
+        return speed;
     }
     
     @Override
