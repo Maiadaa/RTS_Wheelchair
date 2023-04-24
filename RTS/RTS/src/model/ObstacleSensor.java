@@ -34,6 +34,11 @@ public class ObstacleSensor {
             if (this.wheel.getNavSensor().getDistanceToObstacle() < 2){
                 this.wheel.getBrake().decelerate();
                 this.wheel.getJoystick().ControlMovement("left");
+                if (Obstacle){
+                    this.wheel.getBrake().decelerate();
+                    this.wheel.getJoystick().ControlMovement("right");
+                }
+                DetectObstacle();
 //              wheel.getGui().getObstacle().setText("ObstacleDetected");
             }
             return true;
