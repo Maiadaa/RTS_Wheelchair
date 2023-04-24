@@ -58,26 +58,11 @@ public class WheelChairScreen extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         onBtn.setText("ON");
-        onBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                onBtnActionPerformed(evt);
-            }
-        });
 
         offBtn.setText("OFF");
         offBtn.setEnabled(false);
-        offBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                offBtnActionPerformed(evt);
-            }
-        });
 
         onBtn2.setText("Brake");
-        onBtn2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                onBtn2ActionPerformed(evt);
-            }
-        });
 
         onBtn3.setText(">");
         onBtn3.setPreferredSize(new java.awt.Dimension(40, 40));
@@ -91,27 +76,12 @@ public class WheelChairScreen extends javax.swing.JFrame {
 
         onBtn5.setText("^");
         onBtn5.setPreferredSize(new java.awt.Dimension(40, 40));
-        onBtn5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                onBtn5ActionPerformed(evt);
-            }
-        });
 
         onBtn6.setText("<");
         onBtn6.setPreferredSize(new java.awt.Dimension(40, 40));
-        onBtn6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                onBtn6ActionPerformed(evt);
-            }
-        });
 
         onBtn8.setText("v");
         onBtn8.setPreferredSize(new java.awt.Dimension(40, 40));
-        onBtn8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                onBtn8ActionPerformed(evt);
-            }
-        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel3.setText("Wheelchair System");
@@ -144,11 +114,11 @@ public class WheelChairScreen extends javax.swing.JFrame {
 
         currentTempTxt7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         currentTempTxt7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        currentTempTxt7.setText("Forward");
+        currentTempTxt7.setText("100 %");
         currentTempTxt7.setEnabled(false);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel6.setText("Current Direction");
+        jLabel6.setText("Battery %");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -193,8 +163,10 @@ public class WheelChairScreen extends javax.swing.JFrame {
                                     .addComponent(jLabel4))))
                         .addGap(77, 77, 77)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(currentTempTxt7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addComponent(currentTempTxt7, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(22, 22, 22)))))
                 .addGap(35, 35, 35))
         );
         layout.setVerticalGroup(
@@ -246,33 +218,9 @@ public class WheelChairScreen extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void onBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onBtnActionPerformed
-        Config.sendEvent(new PowerEvent(true));
-    }//GEN-LAST:event_onBtnActionPerformed
-
-    private void offBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_offBtnActionPerformed
-        Config.sendEvent(new PowerEvent(false));
-    }//GEN-LAST:event_offBtnActionPerformed
-
-    private void onBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onBtn2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_onBtn2ActionPerformed
-
     private void onBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onBtn3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_onBtn3ActionPerformed
-
-    private void onBtn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onBtn5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_onBtn5ActionPerformed
-
-    private void onBtn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onBtn6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_onBtn6ActionPerformed
-
-    private void onBtn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onBtn8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_onBtn8ActionPerformed
 
     private void currentTempTxt4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currentTempTxt4ActionPerformed
         // TODO add your handling code here:
