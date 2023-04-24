@@ -6,8 +6,10 @@ package rts;
 
 import model.SpeedSensor;
 import model.Battery;
+import model.WheelChair;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+
 /**
  *
  * @author mahmo
@@ -18,15 +20,30 @@ public class RTS {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /*Logger.getRootLogger().setLevel(Level.OFF);
+        // Disable logging
+        Logger.getRootLogger().setLevel(Level.OFF);
+
+        // Register events
         Config.registerEvents();
-        Config.createStatement("select speed from DetectCarSpeed").setSubscriber(new Object(){
-            public void update(double speed){
-                System.out.println("Speed: " + speed);
+
+        // Create Kettle
+        final WheelChair chair = new WheelChair();
+
+//        Config.createStatement("select temp from TempSensorReading")
+//                .setSubscriber(new Object() {
+//                    public void update(int temp) {
+//                        chair.tempSignal(temp);
+//                    }
+//                });
+        Config.createStatement("select state from PowerEvent")
+                .setSubscriber(new Object() {
+            public void update(boolean state) {
+                chair.isEngineOn();
             }
-        });*/
-        Battery b = new Battery();
-        b.run();
+        });
+
     }
-    
+
+}
+
 }
