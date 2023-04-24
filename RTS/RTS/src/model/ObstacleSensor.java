@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.Random;
+
 /**
  *
  * @author mahmo
@@ -12,8 +14,10 @@ public class ObstacleSensor {
     private boolean Obstacle;
     private WheelChair wheel;
 
+    
+    
     public ObstacleSensor(boolean Obstacle, WheelChair wheel) {
-        this.Obstacle = false;
+        this.Obstacle = true;
         this.wheel = wheel;
     }
 
@@ -30,8 +34,10 @@ public class ObstacleSensor {
     
     public boolean DetectObstacle()
     {
+        System.out.println("samo 3aleko");
        if (Obstacle){
-            if (this.wheel.getNavSensor().getDistanceToObstacle() < 2){
+            if (this.wheel.getNavSensor().getDistanceToObstacle() < 3){
+                System.out.println("aloooo");
                 this.wheel.getBrake().decelerate();
                 this.wheel.getJoystick().ControlMovement("left");
                 if (Obstacle){
@@ -46,6 +52,7 @@ public class ObstacleSensor {
        else
            return false;
     }
+    
     
 //    public double DetectSpeed()
 //    {

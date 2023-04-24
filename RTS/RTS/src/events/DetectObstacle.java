@@ -9,13 +9,15 @@ package events;
  * @author PC
  */
 public class DetectObstacle {
-    private boolean Obstacle;
+    private double DistanceToObstacle;
 
-    public DetectObstacle(boolean Obstacle) {
-        this.Obstacle = Obstacle;
+    public DetectObstacle(double DistanceToObstacle) {
+        this.DistanceToObstacle = DistanceToObstacle;
     }
 
-    public boolean isObstacle() {
-        return Obstacle;
-    }    
+    public double getDistanceToObstacle() {
+        return DistanceToObstacle;
+    }
+
+       
 }

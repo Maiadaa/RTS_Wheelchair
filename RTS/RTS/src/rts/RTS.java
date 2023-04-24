@@ -4,8 +4,10 @@
  */
 package rts;
 
+import events.DetectLocationCoordinates;
 import model.SpeedSensor;
 import model.Battery;
+import model.NavigationSensor;
 import model.WheelChair;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -28,6 +30,7 @@ public class RTS {
 
         // Create Kettle
         final WheelChair chair = new WheelChair();
+        final NavigationSensor loc = new NavigationSensor();
 
 //        Config.createStatement("select temp from TempSensorReading")
 //                .setSubscriber(new Object() {
@@ -41,6 +44,9 @@ public class RTS {
                 chair.isEngineOn();
             }
         });
+        loc.run();
+        
+        
 
     }
 

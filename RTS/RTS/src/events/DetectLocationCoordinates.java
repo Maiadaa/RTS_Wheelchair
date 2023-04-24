@@ -10,4 +10,17 @@ package events;
  */
 public class DetectLocationCoordinates {
     
+    private double location;
+
+    public DetectLocationCoordinates(double location) {
+        this.location = location;
+    }
+
+    public DetectLocationCoordinates() {
+    }
+
+    public double getLocation() {
+        return location;
+    }
+   
 }
