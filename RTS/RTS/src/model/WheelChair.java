@@ -4,6 +4,8 @@
  */
 package model;
 
+import events.PowerEvent;
+import rts.Config;
 import view.WheelChairScreen;
 
 /**
@@ -13,10 +15,10 @@ import view.WheelChairScreen;
 public class WheelChair {
 
     private WheelChairScreen gui;
-    
-     // This acts as our ON/OFF switch
-    private boolean state = false;
-    
+
+    // This acts as our ON/OFF switch
+    private boolean state ;
+
     private Battery battery;
     private Brake brake;
     private Button button;
@@ -29,11 +31,11 @@ public class WheelChair {
     private Wheel wheel;
 
     public WheelChair() {
-        
+
         this.gui = new WheelChairScreen();
         gui.setLocationRelativeTo(null);
         gui.setVisible(true);
-        
+
         this.battery = new Battery();
         this.brake = new Brake(this);
         this.button = new Button(this);
@@ -45,7 +47,22 @@ public class WheelChair {
         this.speedSensor = new SpeedSensor();
         this.wheel = new Wheel();
     }
+
+    public void setStateOn() {
+        this.button.stateOn();
+        gui.getOnBtn().setEnabled(false);
+                gui.getOffBtn().setEnabled(true);
+
+
+    }
     
+        public void setStateOff() {
+        this.button.stateOff();
+        gui.getOffBtn().setEnabled(true);
+                gui.getOnBtn().setEnabled(false);
+
+
+    }
 
     public WheelChairScreen getGui() {
         return gui;
@@ -90,9 +107,9 @@ public class WheelChair {
     public Wheel getWheel() {
         return wheel;
     }
-    
+
     public boolean isEngineOn() {
         return state;
     }
-    
+
 }

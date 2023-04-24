@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 public class Brake extends Thread {
 //    boolean stopCommand;
     double speed;
-    WheelChair chair = new WheelChair();
+    WheelChair chair ;
 
 
     public Brake(WheelChair chair) {

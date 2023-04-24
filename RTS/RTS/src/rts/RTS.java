@@ -5,10 +5,13 @@
 package rts;
 
 import events.DetectLocationCoordinates;
+import events.PowerEvent;
 import model.SpeedSensor;
 import model.Battery;
 import model.NavigationSensor;
 import model.WheelChair;
+
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
@@ -28,9 +31,8 @@ public class RTS {
         // Register events
         Config.registerEvents();
 
-        // Create Kettle
+        // Create Wheelchair
         final WheelChair chair = new WheelChair();
-        final NavigationSensor loc = new NavigationSensor(chair);
 
 //        Config.createStatement("select temp from TempSensorReading")
 //                .setSubscriber(new Object() {
@@ -38,13 +40,15 @@ public class RTS {
 //                        chair.tempSignal(temp);
 //                    }
 //                });
-//        Config.createStatement("select state from PowerEvent")
-//                .setSubscriber(new Object() {
-//            public void update(boolean state) {
-//                chair.isEngineOn();
-//            }
-//        });
-        loc.run();
+        Config.createStatement("select state from PowerEvent")
+                .setSubscriber(new Object() {
+            public void update(boolean state) {
+                chair.setStateOn();
+                                chair.setStateOff();
+
+            }
+        });
+        Config.sendEvent(new PowerEvent(true));
     }
 
 }

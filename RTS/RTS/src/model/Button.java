@@ -4,6 +4,9 @@
  */
 package model;
 
+import events.PowerEvent;
+import rts.Config;
+
 /**
  *
  * @author mahmo
@@ -11,24 +14,29 @@ package model;
 public class Button {
 
 //    private boolean StartCommand;
-
     private boolean state;
     private WheelChair chair;
-
+    
     public Button(WheelChair chair) {
         this.state = false;
         this.chair = chair;
     }
-
-    public void setState(boolean state) {
-        this.state = state;
-        if (state) {
-//            chair.getGui().getLedStatusTxt().setText("ON");
-        } else {
-//            chair.getGui().getLedStatusTxt().setText("OFF");
-        }
+    
+    public Button(){
+        
     }
 
+    public void stateOn() {
+        this.state = true;
+        Config.sendEvent(new PowerEvent(state));
+    }
+    
+        public void stateOff() {
+        this.state = false;
+        Config.sendEvent(new PowerEvent(state));
+    }
+
+        
 //    public Button() {
 //    }
 //
@@ -47,5 +55,4 @@ public class Button {
 //    public void StartMovement(boolean command) {
 //
 //    }
-
 }

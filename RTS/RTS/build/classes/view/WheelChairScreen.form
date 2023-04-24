@@ -49,26 +49,18 @@
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="onBtn2" min="-2" pref="124" max="-2" attributes="0"/>
+                      <Component id="brakeBtn" min="-2" pref="124" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="onBtn6" min="-2" max="-2" attributes="0"/>
+                      <Component id="leftBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="35" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="onBtn8" min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="onBtn5" min="-2" max="-2" attributes="0"/>
+                          <Component id="backwardBtn" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="forwardBtn" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="onBtn3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="onBtn4" min="-2" pref="124" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="offBtn" alignment="1" max="32767" attributes="0"/>
-                              <Component id="onBtn" min="-2" pref="124" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="rightBtn" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="accelerateBtn" min="-2" pref="124" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -76,11 +68,11 @@
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="currentTempTxt4" alignment="0" max="32767" attributes="0"/>
+                          <Component id="obstacleScreen" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="currentTempTxt6" max="32767" attributes="0"/>
+                                      <Component id="speedScreen" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -89,18 +81,22 @@
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="currentTempTxt5" min="-2" pref="121" max="-2" attributes="0"/>
+                                  <Component id="directionScreen" min="-2" pref="121" max="-2" attributes="0"/>
                                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="currentTempTxt7" min="-2" pref="121" max="-2" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="batteryScreen" min="-2" pref="121" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
+                          <Component id="offBtn" min="-2" pref="124" max="-2" attributes="0"/>
+                          <Component id="onBtn" min="-2" pref="124" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -111,58 +107,52 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="onBtn" min="-2" pref="47" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="offBtn" min="-2" pref="47" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                              <Component id="currentTempTxt4" min="-2" pref="67" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                      <Component id="obstacleScreen" min="-2" pref="67" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="currentTempTxt6" max="32767" attributes="0"/>
+                              <Component id="speedScreen" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="currentTempTxt5" min="-2" pref="90" max="-2" attributes="0"/>
+                              <Component id="directionScreen" min="-2" pref="90" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+                      <Component id="onBtn" min="-2" pref="38" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="offBtn" min="-2" pref="41" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="currentTempTxt7" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="batteryScreen" min="-2" pref="90" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-              <Component id="onBtn5" min="-2" max="-2" attributes="0"/>
+              <Component id="forwardBtn" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="onBtn2" alignment="3" min="-2" pref="92" max="-2" attributes="0"/>
-                          <Component id="onBtn4" alignment="0" min="-2" pref="92" max="-2" attributes="0"/>
-                          <Component id="onBtn6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="onBtn3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="accelerateBtn" alignment="0" min="-2" pref="92" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="brakeBtn" alignment="3" min="-2" pref="92" max="-2" attributes="0"/>
+                              <Component id="leftBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rightBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                      <Component id="onBtn8" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="backwardBtn" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="35" max="32767" attributes="0"/>
           </Group>
@@ -170,23 +160,20 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="onBtn">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="ON"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="offBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="OFF"/>
-        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="offBtnActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="onBtn2">
+    <Component class="javax.swing.JButton" name="brakeBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Brake"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="onBtn3">
+    <Component class="javax.swing.JButton" name="rightBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="&gt;"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -194,15 +181,15 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onBtn3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rightBtnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="onBtn4">
+    <Component class="javax.swing.JButton" name="accelerateBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Accelerate"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="onBtn5">
+    <Component class="javax.swing.JButton" name="forwardBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="^"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -210,7 +197,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="onBtn6">
+    <Component class="javax.swing.JButton" name="leftBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="&lt;"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -218,7 +205,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="onBtn8">
+    <Component class="javax.swing.JButton" name="backwardBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="v"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -234,7 +221,7 @@
         <Property name="text" type="java.lang.String" value="Wheelchair System"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="currentTempTxt4">
+    <Component class="javax.swing.JTextField" name="obstacleScreen">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -244,7 +231,7 @@
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="currentTempTxt4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="obstacleScreenActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
@@ -255,7 +242,7 @@
         <Property name="text" type="java.lang.String" value="Current Direction"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="currentTempTxt5">
+    <Component class="javax.swing.JTextField" name="directionScreen">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -273,7 +260,7 @@
         <Property name="text" type="java.lang.String" value="Current Speed"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="currentTempTxt6">
+    <Component class="javax.swing.JTextField" name="speedScreen">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="36" style="0"/>
@@ -283,7 +270,7 @@
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="currentTempTxt7">
+    <Component class="javax.swing.JTextField" name="batteryScreen">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -299,6 +286,11 @@
           <Font name="Tahoma" size="16" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Battery %"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="onBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ON"/>
       </Properties>
     </Component>
   </SubComponents>
