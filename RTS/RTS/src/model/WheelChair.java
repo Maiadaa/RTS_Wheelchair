@@ -46,7 +46,7 @@ public class WheelChair {
         this.processor = new Processor();
         this.screen = new Screen();
         this.speedSensor = new SpeedSensor();
-        this.wheel = new Wheel();
+        this.wheel = new Wheel(this);
     }
 
     public void setState(boolean state) {

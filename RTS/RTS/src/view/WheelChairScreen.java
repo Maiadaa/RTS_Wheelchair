@@ -4,6 +4,8 @@
  */
 package view;
 
+import events.Accelerate;
+import events.Decelerate;
 import events.PowerEvent;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -215,6 +217,11 @@ public class WheelChairScreen extends javax.swing.JFrame {
         });
 
         brakeBtn.setText("Brake");
+        brakeBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                brakeBtnActionPerformed(evt);
+            }
+        });
 
         rightBtn.setText(">");
         rightBtn.setPreferredSize(new java.awt.Dimension(40, 40));
@@ -225,6 +232,11 @@ public class WheelChairScreen extends javax.swing.JFrame {
         });
 
         accelerateBtn.setText("Accelerate");
+        accelerateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accelerateBtnActionPerformed(evt);
+            }
+        });
 
         forwardBtn.setText("^");
         forwardBtn.setPreferredSize(new java.awt.Dimension(40, 40));
@@ -263,6 +275,11 @@ public class WheelChairScreen extends javax.swing.JFrame {
         speedScreen.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         speedScreen.setText("0");
         speedScreen.setEnabled(false);
+        speedScreen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                speedScreenActionPerformed(evt);
+            }
+        });
 
         batteryScreen.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         batteryScreen.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -391,6 +408,18 @@ public class WheelChairScreen extends javax.swing.JFrame {
 
         Config.sendEvent(new PowerEvent(true));
     }//GEN-LAST:event_onBtnActionPerformed
+
+    private void brakeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brakeBtnActionPerformed
+        Config.sendEvent(new Decelerate());
+    }//GEN-LAST:event_brakeBtnActionPerformed
+
+    private void accelerateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accelerateBtnActionPerformed
+        Config.sendEvent(new Accelerate());
+    }//GEN-LAST:event_accelerateBtnActionPerformed
+
+    private void speedScreenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_speedScreenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_speedScreenActionPerformed
 
     /**
      * @param args the command line arguments

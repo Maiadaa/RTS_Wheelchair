@@ -16,6 +16,10 @@ public class Decelerate {
         this.speed = speed;
     }
 
+    public Decelerate() {
+    }
+    
+
     public double getSpeed() {
         return speed;
     }

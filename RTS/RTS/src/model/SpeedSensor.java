@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  * @author mahmo
  */
 public class SpeedSensor extends Thread{
-    private double Speed = 20;
+    private double Speed = 0;
     private WheelChair chair;
 
     public void setSpeed(double Speed) {

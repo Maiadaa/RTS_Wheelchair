@@ -15,6 +15,9 @@ public class Accelerate {
         this.speed = speed;
     }
 
+    public Accelerate() {
+    }
+    
     public double getSpeed() {
         return speed;
     }

@@ -55,6 +55,13 @@ public class RTS {
                     }
                 });
         
+        Config.createStatement("select speed from Accelerate")
+                .setSubscriber(new Object() {
+                    public void update(double speed) {
+                        chair.getWheel().accelerate();
+                    }
+                });
+        
         
         Config.createStatement("select speed from DetectCarSpeed").setSubscriber(new Object(){
         public void update(double speed){

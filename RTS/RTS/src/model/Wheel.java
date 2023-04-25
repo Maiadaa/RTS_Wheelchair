@@ -5,12 +5,14 @@
 package model;
 
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author mahmo
  */
-public class Wheel {
+public class Wheel extends Thread{
     boolean stopCommand;
     double speed;
     WheelChair chair;
@@ -19,8 +21,8 @@ public class Wheel {
     public Wheel() {
     }
 
-    public Wheel(Boolean stopCommand) {
-        this.stopCommand = stopCommand;
+    public Wheel(WheelChair chair) {
+        this.chair = chair;
     }
 
     public boolean isStopCommand() {
@@ -41,15 +43,14 @@ public class Wheel {
 //    }
     
     public void accelerate(){
-         double x = chair.getSpeedSensor().getSpeed();
-        while (x != 30 ){
-            if ( x < 30) {
+         double x = chair.getSpeedSensor().DetectSpeed();
+            if ( x < 20) {
                 x += 1; 
                 System.out.println("The current speed is : " + x);
+                chair.getSpeedSensor().setSpeed(x);
             } else {
-                System.out.println("The chair is already at max speed.");;
+                System.out.println("The chair is already at max speed.");
             }
-        }
     }
     
     private int random(int min, int max) {
@@ -62,6 +63,22 @@ public class Wheel {
         return r.nextInt((max - min) + 1) + min;
     }
     
-    
+    @Override
+    public void run()
+    {
+        while (true) {
+            try {
+                this.sleep(1000);
+                accelerate();
+//                if(speed>0){
+//                    System.out.println("Your speed now is : " + speed);
+//                }else
+//                    System.out.println("Your speed now is 0");
+            } catch (InterruptedException ex) {
+                Logger.getLogger(NavigationSensor.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
+    }
     
 }
