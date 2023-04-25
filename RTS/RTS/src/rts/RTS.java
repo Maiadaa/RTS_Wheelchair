@@ -40,15 +40,41 @@ public class RTS {
 //                    }
 //                });
 
-        Config.createStatement("select state from PowerEvent")
-                .setSubscriber(new Object() {
-                    public void update(boolean state) {
-                        chair.setState(state);
-                    }
-                });
+//        Config.createStatement("select state from PowerEvent")
+//                .setSubscriber(new Object() {
+//                    public void update(boolean state) {
+//                        chair.setState(state);
+//                    }
+//                });
         
+        Config.createStatement("select speed from DetectCarSpeed").setSubscriber(new Object(){
+        public void update(double speed){
+          chair.getGui().getSpeedScreen().setText(Double.toString(speed));
+        }
+        });
         
+        Config.createStatement("select distance from MeasureDistance").setSubscriber(new Object(){
+        public void update(double distance){
+            System.out.println("The distance is: " + distance);
+        }
+        });
         
+        Config.createStatement("select percentage from MeasureBatteryPercentage").setSubscriber(new Object(){
+        public void update(double percentage){
+            chair.getGui().getBatteryScreen().setText(Double.toString(percentage));
+            if(percentage <= 0)
+            {
+               chair.getGui().getBatteryScreen().setText("CHARGE YAD"); 
+            }
+            
+        }
+        });
+        SpeedSensor s1 = new SpeedSensor();
+        NavigationSensor n1 = new NavigationSensor(chair);
+        Battery b1 = new Battery();
+        b1.start();
+        s1.start();
+        n1.start();
                 
 
     }

@@ -8,6 +8,8 @@ import events.DetectCarSpeed;
 import com.espertech.esper.client.EPServiceProvider;
 import com.espertech.esper.client.EPServiceProviderManager;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -15,16 +17,13 @@ import java.util.Random;
  */
 public class SpeedSensor extends Thread{
     private double Speed;
+    private WheelChair chair;
 
     public void setSpeed(double Speed) {
         this.Speed = Speed;
     }
 
     public SpeedSensor() {
-    }
-    
-    public SpeedSensor(double Speed) {
-        this.Speed = Speed;
     }
     
     public double randomSpeed(double min, double max) {
@@ -53,8 +52,13 @@ public class SpeedSensor extends Thread{
     
     @Override
     public void run(){
-        while (true) {            
-            DetectSpeed();
+        while (true) { 
+            try {
+                this.sleep(500);
+                DetectSpeed();
+            } catch (InterruptedException ex) {
+                Logger.getLogger(SpeedSensor.class.getName()).log(Level.SEVERE, null, ex);
+            } 
         }
 
     }

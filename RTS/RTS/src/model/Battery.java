@@ -4,18 +4,18 @@
  */
 package model;
 
+import events.MeasureBatteryPercentage;
+import rts.Config;
+
 /**
  *
  * @author mahmo
  */
 public class Battery extends Thread{
     private double Percentage = 100;
-    private String Status;
-
+    private String Status; 
     public Battery() {
     }
-    
-    
     
     public Battery(double Percentage, String Status) {
         this.Percentage = Percentage;
@@ -43,9 +43,14 @@ public class Battery extends Thread{
     public void run(){
         while (true) {
             try {
-                Thread.sleep(30000);
+                Thread.sleep(200);
                 MeasurePercentage();
                 System.out.println(Percentage);
+                Config.sendEvent(new MeasureBatteryPercentage(Percentage));
+                if(Percentage <= 0)
+                {
+                    break;
+                }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

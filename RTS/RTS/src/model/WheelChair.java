@@ -40,7 +40,7 @@ public class WheelChair {
         this.brake = new Brake(this);
         this.button = new Button(this);
         this.joystick = new Joystick(this);
-        this.navSensor = new NavigationSensor();
+        this.navSensor = new NavigationSensor(this);
         this.obsSensor = new ObstacleSensor();
         this.processor = new Processor();
         this.screen = new Screen();

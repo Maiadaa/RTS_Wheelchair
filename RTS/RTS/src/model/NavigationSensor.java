@@ -74,9 +74,14 @@ public class NavigationSensor extends Thread {
     {
         if (Obstacle){
             if (distance < 3.0){
+                this.chair.getGui().getObstacleScreen().setText("Obstacle Detected Yad");
                 this.chair.getBrake().decelerate();
                 this.chair.getJoystick().ControlMovement("right");
 //              wheel.getGui().getObstacle().setText("ObstacleDetected");
+            }
+            else
+            {
+               this.chair.getGui().getObstacleScreen().setText("No Obstacle Yad"); 
             }
         }
     }
@@ -97,10 +102,10 @@ public class NavigationSensor extends Thread {
     {
         while (true) {
             try {
-                this.sleep(3000);
                 while(this.chair.getSpeedSensor().DetectSpeed() != 0){
+                    this.sleep(3000);
                     measureDistance();
-                    System.out.println("The distance is : " + distanceToObstacle);
+                    Config.sendEvent(new MeasureDistance(distanceToObstacle));
                 }
             } catch (InterruptedException ex) {
                 Logger.getLogger(NavigationSensor.class.getName()).log(Level.SEVERE, null, ex);

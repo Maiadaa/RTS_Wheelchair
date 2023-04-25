@@ -38,7 +38,7 @@ public class Brake extends Thread {
                 x -= 1; 
                 System.out.println("The current speed is : " + x);
             } else {
-                System.out.println("The chair is already stopped, speed is 0.");;
+                System.out.println("The chair is already stopped, speed is 0.");
             }
         }
     }

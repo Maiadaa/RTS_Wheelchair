@@ -9,5 +9,14 @@ package events;
  * @author PC
  */
 public class MeasureBatteryPercentage {
+    private double Percentage;
+
+    public MeasureBatteryPercentage(double Percentage) {
+        this.Percentage = Percentage;
+    }
+
+    public double getPercentage() {
+        return Percentage;
+    }
     
 }
