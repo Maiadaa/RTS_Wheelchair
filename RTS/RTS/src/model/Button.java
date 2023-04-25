@@ -26,16 +26,40 @@ public class Button {
         this.state = state;
         if (state) {
             chair.getGui().getOffBtn().setEnabled(true);
-            chair.getGui().getOnBtn().setEnabled(false);    
+            chair.getGui().getOnBtn().setEnabled(false);
+
+            chair.getGui().getAccelerateBtn().setEnabled(true);
+            chair.getGui().getBrakeBtn().setEnabled(true);
+            chair.getGui().getForwardBtn().setEnabled(true);
+            chair.getGui().getBackwardBtn().setEnabled(true);
+            chair.getGui().getLeftBtn().setEnabled(true);
+            chair.getGui().getRightBtn().setEnabled(true);
 
         } else {
             chair.getGui().getOnBtn().setEnabled(true);
             chair.getGui().getOffBtn().setEnabled(false);
+
+            chair.getGui().getAccelerateBtn().setEnabled(false);
+            chair.getGui().getBrakeBtn().setEnabled(false);
+            chair.getGui().getForwardBtn().setEnabled(false);
+            chair.getGui().getBackwardBtn().setEnabled(false);
+            chair.getGui().getLeftBtn().setEnabled(false);
+            chair.getGui().getRightBtn().setEnabled(false);
+
+            chair.getGui().getDirectionScreen().setText("IDLE");
+            chair.getJoystick().ControlMovement("IDLE");
+
+            chair.getGui().getObstacleScreen().setText("No Obstacle");
+            chair.getObsSensor().setObstacle(false);
+
+            chair.getGui().getSpeedScreen().setText("0.0");
+            chair.getSpeedSensor().setSpeed(0.0);
+
         }
     }
-    
-    public void brake(boolean br){
-        if (br){
+
+    public void brake(boolean br) {
+        if (br) {
             chair.getBrake();
             chair.getGui().getBrakeBtn().setEnabled(false);
         }

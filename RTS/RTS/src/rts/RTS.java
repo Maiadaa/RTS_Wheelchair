@@ -86,18 +86,18 @@ public class RTS {
         Config.createStatement("select percentage from MeasureBatteryPercentage").setSubscriber(new Object(){
         public void update(double percentage){
             chair.getGui().getBatteryScreen().setText(Double.toString(percentage));
-            if(percentage <= 0)
-            {
-               chair.getGui().getBatteryScreen().setText("CHARGE YAD"); 
-            }
+//            if(percentage <= 0)
+//            {
+//               chair.getGui().getBatteryScreen().setText("0"); 
+//            }
             
         }
         });
-        
-        
+//        
+//        
         SpeedSensor s1 = new SpeedSensor();
         NavigationSensor n1 = new NavigationSensor(chair);
-        Battery b1 = new Battery();
+        Battery b1 = new Battery(chair);
         b1.start();
         s1.start();
         n1.start();

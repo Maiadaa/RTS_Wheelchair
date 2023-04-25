@@ -14,12 +14,12 @@ import java.util.logging.Logger;
  */
 public class Brake extends Thread {
 //    boolean stopCommand;
+
     double speed;
-    WheelChair chair ;
+    WheelChair chair;
 
     public Brake() {
     }
-
 
     public Brake(WheelChair chair) {
 //        this.stopCommand = stopCommand;
@@ -33,28 +33,30 @@ public class Brake extends Thread {
 //    public void setStopCommand(boolean stopCommand) {
 //        this.stopCommand = stopCommand;
 //    }
-    
-    public void decelerate (){
-        double x = chair.getSpeedSensor().DetectSpeed();
-            if ( x > 0) {
-                x -= 1; 
+
+    public void decelerate() {
+        if (chair.getBattery().getPercentage() > 0.0 && chair.isEngineOn()) {
+            double x = chair.getSpeedSensor().DetectSpeed();
+            if (x > 0) {
+                x -= 1;
                 System.out.println("The current speed is : " + x);
                 chair.getSpeedSensor().setSpeed(x);
             } else {
-                System.out.println("The chair is already stopped, speed is 0.");
+                System.out.println("The chair is already stopped, speed is 0.0");
             }
+        }
     }
 //    
 //    public double detectSpeed(){
 //        return 0.0;
 //    }
 //    
+
     @Override
-    public void run()
-    {
+    public void run() {
         while (true) {
             try {
-                this.sleep(1000);
+                this.sleep(500);
                 decelerate();
 //                if(speed>0){
 //                    System.out.println("Your speed now is : " + speed);
@@ -63,7 +65,7 @@ public class Brake extends Thread {
             } catch (InterruptedException ex) {
                 Logger.getLogger(NavigationSensor.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+
         }
     }
 }

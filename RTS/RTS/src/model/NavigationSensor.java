@@ -43,9 +43,6 @@ public class NavigationSensor extends Thread {
         this.chair = chair;
     }
 
-    public NavigationSensor() {
-    }
-
     public String getCurrentCoordinates() {
         return currentCoordinates;
     }

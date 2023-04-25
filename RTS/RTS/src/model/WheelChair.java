@@ -37,11 +37,13 @@ public class WheelChair {
         gui.setLocationRelativeTo(null);
         gui.setVisible(true);
 
-        this.battery = new Battery();
+        this.battery = new Battery(this);
+//        battery.start();
         this.brake = new Brake(this);
         this.button = new Button(this);
         this.joystick = new Joystick(this);
         this.navSensor = new NavigationSensor(this);
+//        navSensor.start();
         this.obsSensor = new ObstacleSensor();
         this.processor = new Processor();
         this.screen = new Screen();

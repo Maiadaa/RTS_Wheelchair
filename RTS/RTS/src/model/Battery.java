@@ -14,13 +14,12 @@ import rts.Config;
 public class Battery extends Thread{
     private double Percentage = 100;
     private String Status; 
-    public Battery() {
+    private WheelChair chair;
+
+    public Battery(WheelChair chair) {
+        this.chair = chair;
     }
-    
-    public Battery(double Percentage, String Status) {
-        this.Percentage = Percentage;
-        this.Status = Status;
-    }
+
     public double getPercentage() {
         return Percentage;
     }
@@ -29,7 +28,12 @@ public class Battery extends Thread{
         return Status;
     }
     public void MeasurePercentage(){
-      this.setPercentage(--Percentage);
+       if(this.Percentage == 0){
+//           chair.setState(false);
+           return;
+       }
+        
+        this.setPercentage(--Percentage);
     }
 
     public void setPercentage(double Percentage) {
@@ -41,16 +45,16 @@ public class Battery extends Thread{
     }
     @Override
     public void run(){
-        while (true) {
+        while (chair.isEngineOn()) {
             try {
                 Thread.sleep(200);
                 MeasurePercentage();
                 System.out.println(Percentage);
                 Config.sendEvent(new MeasureBatteryPercentage(Percentage));
-                if(Percentage <= 0)
-                {
-                    break;
-                }
+//                if(Percentage <= 0)
+//                {
+//                    break;
+//                }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

@@ -211,6 +211,7 @@ public class WheelChairScreen extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         offBtn.setText("OFF");
+        offBtn.setEnabled(false);
         offBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 offBtnActionPerformed(evt);
@@ -218,6 +219,7 @@ public class WheelChairScreen extends javax.swing.JFrame {
         });
 
         brakeBtn.setText("Brake");
+        brakeBtn.setEnabled(false);
         brakeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 brakeBtnActionPerformed(evt);
@@ -225,6 +227,7 @@ public class WheelChairScreen extends javax.swing.JFrame {
         });
 
         rightBtn.setText(">");
+        rightBtn.setEnabled(false);
         rightBtn.setPreferredSize(new java.awt.Dimension(40, 40));
         rightBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,13 +236,20 @@ public class WheelChairScreen extends javax.swing.JFrame {
         });
 
         accelerateBtn.setText("Accelerate");
+        accelerateBtn.setEnabled(false);
         accelerateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 accelerateBtnActionPerformed(evt);
             }
         });
+        accelerateBtn.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                accelerateBtnKeyPressed(evt);
+            }
+        });
 
         forwardBtn.setText("^");
+        forwardBtn.setEnabled(false);
         forwardBtn.setPreferredSize(new java.awt.Dimension(40, 40));
         forwardBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -248,6 +258,7 @@ public class WheelChairScreen extends javax.swing.JFrame {
         });
 
         leftBtn.setText("<");
+        leftBtn.setEnabled(false);
         leftBtn.setPreferredSize(new java.awt.Dimension(40, 40));
         leftBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -256,6 +267,7 @@ public class WheelChairScreen extends javax.swing.JFrame {
         });
 
         backwardBtn.setText("v");
+        backwardBtn.setEnabled(false);
         backwardBtn.setPreferredSize(new java.awt.Dimension(40, 40));
         backwardBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -281,7 +293,7 @@ public class WheelChairScreen extends javax.swing.JFrame {
 
         directionScreen.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         directionScreen.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        directionScreen.setText("A");
+        directionScreen.setText("IDLE");
         directionScreen.setEnabled(false);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -299,7 +311,7 @@ public class WheelChairScreen extends javax.swing.JFrame {
 
         batteryScreen.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         batteryScreen.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        batteryScreen.setText("100 %");
+        batteryScreen.setText("100");
         batteryScreen.setEnabled(false);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -459,6 +471,10 @@ public class WheelChairScreen extends javax.swing.JFrame {
                 Config.sendEvent(new ControlMovement("Backward"));
 
     }//GEN-LAST:event_backwardBtnActionPerformed
+
+    private void accelerateBtnKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_accelerateBtnKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_accelerateBtnKeyPressed
 
     /**
      * @param args the command line arguments

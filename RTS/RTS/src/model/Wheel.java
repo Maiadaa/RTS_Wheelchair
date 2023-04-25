@@ -43,7 +43,8 @@ public class Wheel extends Thread{
 //    }
     
     public void accelerate(){
-         double x = chair.getSpeedSensor().DetectSpeed();
+         if(chair.getBattery().getPercentage() != 0.0 && chair.isEngineOn()){
+             double x = chair.getSpeedSensor().DetectSpeed();
             if ( x < 20) {
                 x += 1; 
                 System.out.println("The current speed is : " + x);
@@ -51,6 +52,7 @@ public class Wheel extends Thread{
             } else {
                 System.out.println("The chair is already at max speed.");
             }
+         }
     }
     
     private int random(int min, int max) {
