@@ -32,9 +32,14 @@ public class Button {
             chair.getGui().getOnBtn().setEnabled(true);
             chair.getGui().getOffBtn().setEnabled(false);
         }
-
     }
-
+    
+    public void brake(boolean br){
+        if (br){
+            chair.getBrake();
+            chair.getGui().getBrakeBtn().setEnabled(false);
+        }
+    }
 //    public Button() {
 //    }
 //

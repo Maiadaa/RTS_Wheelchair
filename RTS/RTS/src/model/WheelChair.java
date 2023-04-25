@@ -18,6 +18,7 @@ public class WheelChair {
 
     // This acts as our ON/OFF switch
     private boolean state = false;
+    private double speed;
 
     private Battery battery;
     private Brake brake;
@@ -102,5 +103,7 @@ public class WheelChair {
     public boolean isEngineOn() {
         return state;
     }
+    
+    
 
 }

@@ -59,7 +59,7 @@ public class Wheel {
         }
         
         Random r = new Random();
-        return r.nextInt((max - min) + 3) + min;
+        return r.nextInt((max - min) + 1) + min;
     }
     
     

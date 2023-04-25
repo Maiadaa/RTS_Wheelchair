@@ -8,6 +8,7 @@ import events.DetectLocationCoordinates;
 import events.PowerEvent;
 import model.SpeedSensor;
 import model.Battery;
+import model.Brake;
 import model.NavigationSensor;
 import model.WheelChair;
 
@@ -40,12 +41,20 @@ public class RTS {
 //                    }
 //                });
 
-//        Config.createStatement("select state from PowerEvent")
-//                .setSubscriber(new Object() {
-//                    public void update(boolean state) {
-//                        chair.setState(state);
-//                    }
-//                });
+        Config.createStatement("select state from PowerEvent")
+                .setSubscriber(new Object() {
+                    public void update(boolean state) {
+                        chair.setState(state);
+                    }
+                });
+        
+        Config.createStatement("select speed from Decelerate")
+                .setSubscriber(new Object() {
+                    public void update(double speed) {
+                        chair.getBrake().decelerate();
+                    }
+                });
+        
         
         Config.createStatement("select speed from DetectCarSpeed").setSubscriber(new Object(){
         public void update(double speed){
@@ -69,6 +78,8 @@ public class RTS {
             
         }
         });
+        
+        
         SpeedSensor s1 = new SpeedSensor();
         NavigationSensor n1 = new NavigationSensor(chair);
         Battery b1 = new Battery();

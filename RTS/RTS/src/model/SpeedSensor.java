@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  * @author mahmo
  */
 public class SpeedSensor extends Thread{
-    private double Speed;
+    private double Speed = 20;
     private WheelChair chair;
 
     public void setSpeed(double Speed) {
@@ -45,16 +45,16 @@ public class SpeedSensor extends Thread{
     }
 
     public double DetectSpeed(){
-        double speed = randomSpeed(0, 15);
-        Config.sendEvent(new DetectCarSpeed(speed));
-        return speed;
+        double speed;
+        Config.sendEvent(new DetectCarSpeed(Speed));
+        return Speed;
     }
     
     @Override
     public void run(){
         while (true) { 
             try {
-                this.sleep(500);
+                this.sleep(5000);
                 DetectSpeed();
             } catch (InterruptedException ex) {
                 Logger.getLogger(SpeedSensor.class.getName()).log(Level.SEVERE, null, ex);

@@ -17,6 +17,9 @@ public class Brake extends Thread {
     double speed;
     WheelChair chair ;
 
+    public Brake() {
+    }
+
 
     public Brake(WheelChair chair) {
 //        this.stopCommand = stopCommand;
@@ -32,15 +35,14 @@ public class Brake extends Thread {
 //    }
     
     public void decelerate (){
-        double x = chair.getSpeedSensor().getSpeed();
-        while (x != 0 ){
+        double x = chair.getSpeedSensor().DetectSpeed();
             if ( x > 0) {
                 x -= 1; 
                 System.out.println("The current speed is : " + x);
+                chair.getSpeedSensor().setSpeed(x);
             } else {
                 System.out.println("The chair is already stopped, speed is 0.");
             }
-        }
     }
 //    
 //    public double detectSpeed(){
