@@ -76,12 +76,13 @@ public class NavigationSensor extends Thread {
             if (distance < 3.0){
                 this.chair.getGui().getObstacleScreen().setText("Obstacle Detected Yad");
                 this.chair.getBrake().decelerate();
-                this.chair.getJoystick().ControlMovement("right");
+                this.chair.getJoystick().ControlMovement("Right");
 //              wheel.getGui().getObstacle().setText("ObstacleDetected");
             }
             else
             {
                this.chair.getGui().getObstacleScreen().setText("No Obstacle Yad"); 
+               this.chair.getJoystick().ControlMovement("Forward");
             }
         }
     }
