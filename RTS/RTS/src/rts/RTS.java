@@ -63,6 +63,14 @@ public class RTS {
                 });
         
         
+                Config.createStatement("select direction from ControlMovement")
+                .setSubscriber(new Object() {
+                    public void update(String direction) {
+                        chair.getJoystick().ControlMovement(direction);
+                    }
+                });
+        
+        
         Config.createStatement("select speed from DetectCarSpeed").setSubscriber(new Object(){
         public void update(double speed){
           chair.getGui().getSpeedScreen().setText(Double.toString(speed));

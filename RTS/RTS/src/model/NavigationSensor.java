@@ -15,26 +15,26 @@ import rts.Config;
  * @author mahmo
  */
 public class NavigationSensor extends Thread {
-    
+
     private String currentCoordinates;
-        private boolean Obstacle = true;
-        
-         
+    private boolean Obstacle = true;
+
     private String Destination;
     private double distanceToObstacle;
     private WheelChair chair;
 
-    String [] arr = {"right", "left"};
-         Random r1 = new Random();
+    String[] arr = {"right", "left"};
+    Random r1 = new Random();
 
-         // randomly selects an index from the arr
-         int select = r1.nextInt(arr.length); 
+    // randomly selects an index from the arr
+    int select = r1.nextInt(arr.length);
+
     private int random(int min, int max) {
-        
+
         if (min >= max) {
             throw new IllegalArgumentException("max must be greater than min");
         }
-        
+
         Random r = new Random();
         return r.nextInt((max - min) + 1) + min;
     }
@@ -42,7 +42,7 @@ public class NavigationSensor extends Thread {
     public NavigationSensor(WheelChair chair) {
         this.chair = chair;
     }
-    
+
     public NavigationSensor() {
     }
 
@@ -57,35 +57,30 @@ public class NavigationSensor extends Thread {
     public double getDistanceToObstacle() {
         return distanceToObstacle;
     }
-    
-    public double detectLocation(int min, int max){
-        if(min>max)
-        {
+
+    public double detectLocation(int min, int max) {
+        if (min > max) {
             throw new IllegalArgumentException("max must be greater than min");
-        }
-        else
-        {
+        } else {
             Random r = new Random();
             return min + (max - min) * r.nextDouble();
-        } 
+        }
     }
-    
-    public void DetectObstacle(double distance)
-    {
-        if (Obstacle){
-            if (distance < 3.0){
+
+    public void DetectObstacle(double distance) {
+        if (Obstacle) {
+            if (distance < 3.0) {
                 this.chair.getGui().getObstacleScreen().setText("Obstacle Detected Yad");
                 this.chair.getBrake().decelerate();
                 this.chair.getJoystick().ControlMovement("Right");
 //              wheel.getGui().getObstacle().setText("ObstacleDetected");
-            }
-            else
-            {
-               this.chair.getGui().getObstacleScreen().setText("No Obstacle Yad"); 
-               this.chair.getJoystick().ControlMovement("Forward");
+            } else {
+                this.chair.getGui().getObstacleScreen().setText("No Obstacle Yad");
+                this.chair.getJoystick().ControlMovement("Forward");
             }
         }
     }
+    
     public void measureDistance() {
 //        double obLoc = obSensor.DetectObstacleLocation(20,60);
 //        double myLoc = detectLocation(15,60);
@@ -99,11 +94,10 @@ public class NavigationSensor extends Thread {
     }
 
     @Override
-    public void run()
-    {
+    public void run() {
         while (true) {
             try {
-                while(this.chair.getSpeedSensor().DetectSpeed() != 0){
+                while (this.chair.getSpeedSensor().DetectSpeed() != 0) {
                     this.sleep(3000);
                     measureDistance();
                     Config.sendEvent(new MeasureDistance(distanceToObstacle));
@@ -111,7 +105,7 @@ public class NavigationSensor extends Thread {
             } catch (InterruptedException ex) {
                 Logger.getLogger(NavigationSensor.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+
         }
     }
 }

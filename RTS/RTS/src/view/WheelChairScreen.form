@@ -48,20 +48,6 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="brakeBtn" min="-2" pref="124" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="leftBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="35" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="backwardBtn" min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="forwardBtn" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="rightBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="accelerateBtn" min="-2" pref="124" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
@@ -72,7 +58,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="speedScreen" max="32767" attributes="0"/>
+                                      <Component id="speedScreen" pref="124" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -97,6 +83,22 @@
                           </Group>
                           <Component id="offBtn" min="-2" pref="124" max="-2" attributes="0"/>
                           <Component id="onBtn" min="-2" pref="124" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="brakeBtn" min="-2" pref="124" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="leftBtn" min="-2" pref="51" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="forwardBtn" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                              <Component id="rightBtn" min="-2" pref="49" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="accelerateBtn" min="-2" pref="124" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="backwardBtn" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -138,23 +140,29 @@
                       <Component id="batteryScreen" min="-2" pref="90" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-              <Component id="forwardBtn" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="accelerateBtn" alignment="0" min="-2" pref="92" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="accelerateBtn" alignment="3" min="-2" pref="92" max="-2" attributes="0"/>
+                              <Component id="rightBtn" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="brakeBtn" alignment="3" min="-2" pref="92" max="-2" attributes="0"/>
-                              <Component id="leftBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="rightBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="leftBtn" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <EmptySpace pref="107" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="backwardBtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                      <Component id="forwardBtn" min="-2" pref="49" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="backwardBtn" min="-2" pref="49" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="35" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -202,6 +210,9 @@
           <Dimension value="[40, 40]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="forwardBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="leftBtn">
       <Properties>
@@ -210,6 +221,9 @@
           <Dimension value="[40, 40]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="leftBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="backwardBtn">
       <Properties>
@@ -218,6 +232,9 @@
           <Dimension value="[40, 40]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backwardBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
@@ -233,7 +250,7 @@
           <Font name="Tahoma" size="18" style="0"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="!! Obstacle Detected !!"/>
+        <Property name="text" type="java.lang.String" value="No Obstacles"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
@@ -254,7 +271,7 @@
           <Font name="Tahoma" size="18" style="0"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Forward"/>
+        <Property name="text" type="java.lang.String" value="A"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>

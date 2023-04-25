@@ -14,7 +14,9 @@ import rts.Config;
  *
  * @author mahmo
  */
-public class Joystick extends Thread {
+public class Joystick
+//        extends Thread 
+{
 
     private String Direction;
 
@@ -22,7 +24,7 @@ public class Joystick extends Thread {
 
     public Joystick(WheelChair chair) {
         this.chair = chair;
-        this.Direction = "Idle";
+        this.Direction = "Forward";
         System.out.println("Engine Off");
     }
 //
@@ -48,21 +50,21 @@ public class Joystick extends Thread {
         return Direction;
     }
     
-    @Override
-    public void run()
-    {
-        while (true) {
-            try {
-                while(this.chair.getSpeedSensor().DetectSpeed() != 0){
-                    this.sleep(3000);
-                    ControlMovement(Direction);
-                    Config.sendEvent(new ControlMovement(Direction));
-                }
-            } catch (InterruptedException ex) {
-                Logger.getLogger(NavigationSensor.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-        }
-    }
+//    @Override
+//    public void run()
+//    {
+//        while (true) {
+//            try {
+//                while(this.chair.getSpeedSensor().DetectSpeed() != 0){
+//                    this.sleep(3000);
+////                    ControlMovement(Direction);
+////                    Config.sendEvent(new ControlMovement(Direction));
+//                }
+//            } catch (InterruptedException ex) {
+//                Logger.getLogger(NavigationSensor.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//            
+//        }
+//    }
 
 }
