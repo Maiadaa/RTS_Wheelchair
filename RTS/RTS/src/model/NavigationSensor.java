@@ -21,7 +21,7 @@ import rts.Config;
  * @author mahmo
  */
 public class NavigationSensor extends Thread {
-    private double distanceToObstacle;
+    private double distanceToObstacle = 5.0;
     private WheelChair chair;
 
     String[] arr = {"right", "left"};
