@@ -36,12 +36,12 @@ public class ObstacleSensor {
     public void DetectObstacle(double distance) {
         if (Obstacle) {
             if (distance < 3.0) {
-                this.chair.getGui().getObstacleScreen().setText("Obstacle Detected");
+                chair.getScreen().DisplayObstacle("!! Obstacle Detected !!");
                 this.chair.getBrake().decelerate();
-                this.chair.getJoystick().ControlMovement("Right");
+                chair.getScreen().DisplayDirection("Right");
             } else {
-                this.chair.getGui().getObstacleScreen().setText("No Obstacle");
-                this.chair.getJoystick().ControlMovement("Forward");
+                chair.getScreen().DisplayObstacle("No Obstacle");
+                chair.getScreen().DisplayDirection("Forward");
             }
         }
     }

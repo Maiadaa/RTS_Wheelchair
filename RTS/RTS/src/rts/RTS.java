@@ -66,14 +66,16 @@ public class RTS {
                 Config.createStatement("select direction from ControlMovement")
                 .setSubscriber(new Object() {
                     public void update(String direction) {
-                        chair.getJoystick().ControlMovement(direction);
+//                        chair.getJoystick().ControlMovement(direction);
+                        chair.getScreen().DisplayDirection(direction);
                     }
                 });
         
         
         Config.createStatement("select speed from DetectCarSpeed").setSubscriber(new Object(){
         public void update(double speed){
-          chair.getGui().getSpeedScreen().setText(Double.toString(speed));
+//          chair.getGui().getSpeedScreen().setText(Double.toString(speed));
+          chair.getScreen().DisplaySpeed(speed);
         }
         });
         
@@ -85,7 +87,8 @@ public class RTS {
         
         Config.createStatement("select percentage from MeasureBatteryPercentage").setSubscriber(new Object(){
         public void update(double percentage){
-            chair.getGui().getBatteryScreen().setText(Double.toString(percentage));
+//            chair.getGui().getBatteryScreen().setText(Double.toString(percentage));
+            chair.getScreen().DisplayBattery(percentage);
 //            if(percentage <= 0)
 //            {
 //               chair.getGui().getBatteryScreen().setText("0"); 

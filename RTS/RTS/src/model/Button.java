@@ -61,19 +61,19 @@ public class Button extends Thread {
             chair.getGui().getBackwardBtn().setEnabled(false);
             chair.getGui().getLeftBtn().setEnabled(false);
             chair.getGui().getRightBtn().setEnabled(false);
-            chair.getGui().getDirectionScreen().setText("IDLE");
+            chair.getScreen().DisplayDirection("IDLE");
             chair.getJoystick().ControlMovement("IDLE");
-            chair.getGui().getObstacleScreen().setText("No Obstacle");
+            chair.getScreen().DisplayObstacle("No Obstacle");
             chair.getObsSensor().setObstacle(false);
-            chair.getGui().getSpeedScreen().setText("0.0");
+            chair.getScreen().DisplaySpeed(0.0);
             chair.getSpeedSensor().setSpeed(0.0);
             this.currentBatteryPercentage = Double.parseDouble(chair.getGui().getBatteryScreen().getText());
   
             if (currentBatteryPercentage == 0.0) {
-                chair.getGui().getChargingScreen().setText("CHARGING");
+                chair.getScreen().DisplayBatteryStatus("CHARGE");
                 chair.getGui().getOnBtn().setEnabled(false);
                 Thread.sleep(5000);
-                chair.getGui().getChargingScreen().setText("");
+                chair.getScreen().DisplayBatteryStatus("");
                 chair.getGui().getOnBtn().setEnabled(true);
             }
         }

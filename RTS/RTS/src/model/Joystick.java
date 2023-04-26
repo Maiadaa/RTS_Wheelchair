@@ -33,7 +33,7 @@ public class Joystick
         // change direction 
         this.Direction = direction;
         System.out.println("Changing direction to move " + direction);
-        this.chair.getGui().getDirectionScreen().setText(direction);
+        chair.getScreen().DisplayDirection(direction);
     }
 
     public String getDirection() {
