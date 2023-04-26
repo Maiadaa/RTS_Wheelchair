@@ -72,7 +72,7 @@ public class RTS {
                 });
         
         
-        Config.createStatement("select speed from DetectCarSpeed").setSubscriber(new Object(){
+        Config.createStatement("select speed from DetectSpeed").setSubscriber(new Object(){
         public void update(double speed){
 //          chair.getGui().getSpeedScreen().setText(Double.toString(speed));
           chair.getScreen().DisplaySpeed(speed);
