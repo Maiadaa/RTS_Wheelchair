@@ -45,8 +45,10 @@ public class Battery extends Thread{
     }
     @Override
     public void run(){
-        while (chair.isEngineOn()) {
-            try {
+        
+        while (true) {
+            if (chair.isEngineOn()){
+                try {
                 Thread.sleep(200);
                 MeasurePercentage();
                 System.out.println(Percentage);
@@ -58,6 +60,8 @@ public class Battery extends Thread{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            }
+            
         }
     }
 }

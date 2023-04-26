@@ -4,6 +4,7 @@
  */
 package model;
 
+import events.MeasureBatteryPercentage;
 import events.PowerEvent;
 import rts.Config;
 
@@ -27,14 +28,14 @@ public class Button {
         if (state) {
             chair.getGui().getOffBtn().setEnabled(true);
             chair.getGui().getOnBtn().setEnabled(false);
-
             chair.getGui().getAccelerateBtn().setEnabled(true);
             chair.getGui().getBrakeBtn().setEnabled(true);
             chair.getGui().getForwardBtn().setEnabled(true);
             chair.getGui().getBackwardBtn().setEnabled(true);
             chair.getGui().getLeftBtn().setEnabled(true);
             chair.getGui().getRightBtn().setEnabled(true);
-
+            chair.getBattery().start();
+            
         } else {
             chair.getGui().getOnBtn().setEnabled(true);
             chair.getGui().getOffBtn().setEnabled(false);
@@ -53,8 +54,8 @@ public class Button {
             chair.getObsSensor().setObstacle(false);
 
             chair.getGui().getSpeedScreen().setText("0.0");
-            chair.getSpeedSensor().setSpeed(0.0);
-
+            chair.getSpeedSensor().setSpeed(0.0); 
+            
         }
     }
 
