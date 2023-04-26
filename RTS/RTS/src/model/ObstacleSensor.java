@@ -39,7 +39,7 @@ public class ObstacleSensor {
                 chair.getScreen().DisplayDirection("Right");
             } else {
                 this.Obstacle = false;
-                chair.getScreen().DisplayObstacle("No Obstacle");
+                chair.getScreen().DisplayObstacle("");
                 chair.getScreen().DisplayDirection("Forward");
             }
         }
