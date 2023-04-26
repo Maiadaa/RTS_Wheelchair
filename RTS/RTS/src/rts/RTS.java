@@ -43,7 +43,7 @@ public class RTS {
 
         Config.createStatement("select state from PowerEvent")
                 .setSubscriber(new Object() {
-                    public void update(boolean state) {
+                    public void update(boolean state) throws InterruptedException {
                         chair.setState(state);
                     }
                 });

@@ -20,6 +20,11 @@ public class Battery extends Thread{
         this.chair = chair;
     }
 
+    public Battery(WheelChair chair, double Percentage) {
+        this.chair = chair;
+        this.Percentage = Percentage;
+    }
+
     public double getPercentage() {
         return Percentage;
     }
@@ -53,15 +58,18 @@ public class Battery extends Thread{
                 MeasurePercentage();
                 System.out.println(Percentage);
                 Config.sendEvent(new MeasureBatteryPercentage(Percentage));
-//                if(Percentage <= 0)
-//                {
-//                    break;
-//                }
+                
+                if(Percentage <= 0)
+                {
+//                    chair.getGui().getBatteryScreen().setText("Charge yad");
+                    chair.setState(false);
+                }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            }
-            
+            }else if (!chair.isEngineOn()){
+                break;
+            }            
         }
     }
 }

@@ -51,7 +51,7 @@ public class WheelChair {
         this.wheel = new Wheel(this);
     }
 
-    public void setState(boolean state) {
+    public void setState(boolean state) throws InterruptedException {
         this.state = state;
         this.button.setState(state);
         gui.getOnBtn().setEnabled(!state);
@@ -60,6 +60,10 @@ public class WheelChair {
 
     public WheelChairScreen getGui() {
         return gui;
+    }
+
+    public void setBattery(Battery battery) {
+        this.battery = battery;
     }
 
     public Battery getBattery() {
@@ -104,8 +108,6 @@ public class WheelChair {
 
     public boolean isEngineOn() {
         return state;
-    }
-    
-    
+    }   
 
 }

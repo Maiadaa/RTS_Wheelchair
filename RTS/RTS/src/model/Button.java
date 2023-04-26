@@ -12,18 +12,18 @@ import rts.Config;
  *
  * @author mahmo
  */
-public class Button {
+public class Button{
 
 //    private boolean StartCommand;
     private boolean state;
     private WheelChair chair;
-
+    private double currentBatteryPercentage = 100.0;
     public Button(WheelChair chair) {
         this.state = false;
         this.chair = chair;
     }
 
-    public void setState(boolean state) {
+    public void setState(boolean state) throws InterruptedException {
         this.state = state;
         if (state) {
             chair.getGui().getOffBtn().setEnabled(true);
@@ -34,28 +34,26 @@ public class Button {
             chair.getGui().getBackwardBtn().setEnabled(true);
             chair.getGui().getLeftBtn().setEnabled(true);
             chair.getGui().getRightBtn().setEnabled(true);
-            chair.getBattery().start();
+            Battery b1 = new Battery(chair, currentBatteryPercentage);
+            b1.setPercentage(this.currentBatteryPercentage);
+            b1.start();
             
         } else {
             chair.getGui().getOnBtn().setEnabled(true);
             chair.getGui().getOffBtn().setEnabled(false);
-
             chair.getGui().getAccelerateBtn().setEnabled(false);
             chair.getGui().getBrakeBtn().setEnabled(false);
             chair.getGui().getForwardBtn().setEnabled(false);
             chair.getGui().getBackwardBtn().setEnabled(false);
             chair.getGui().getLeftBtn().setEnabled(false);
             chair.getGui().getRightBtn().setEnabled(false);
-
             chair.getGui().getDirectionScreen().setText("IDLE");
             chair.getJoystick().ControlMovement("IDLE");
-
             chair.getGui().getObstacleScreen().setText("No Obstacle");
             chair.getObsSensor().setObstacle(false);
-
             chair.getGui().getSpeedScreen().setText("0.0");
             chair.getSpeedSensor().setSpeed(0.0); 
-            
+            this.currentBatteryPercentage = Double.parseDouble(chair.getGui().getBatteryScreen().getText());
         }
     }
 
