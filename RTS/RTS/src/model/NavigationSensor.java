@@ -58,7 +58,7 @@ public class NavigationSensor extends Thread {
 //    }
     
     public void measureDistance() {
-        distanceToObstacle = random(1, 5);
+        distanceToObstacle = random(1, 3);
         this.chair.getObsSensor().DetectObstacle(distanceToObstacle);
     }
 

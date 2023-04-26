@@ -12,8 +12,8 @@ import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import rts.Config;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
+//import sun.audio.AudioPlayer;
+//import sun.audio.AudioStream;
 
 /**
  *
@@ -54,7 +54,7 @@ public class Battery extends Thread{
         while (true) {
             if (chair.isEngineOn()){
                 try {
-                Thread.sleep(200);
+                Thread.sleep(1000);
                 MeasurePercentage();
                 System.out.println(Percentage);
                 Config.sendEvent(new MeasureBatteryPercentage(Percentage));
@@ -63,14 +63,14 @@ public class Battery extends Thread{
                 {
                     chair.setState(false);
                     InputStream input;
-                    try {
-                        input = new FileInputStream(new File("src/Sounds/ebrahim.wav"));
-                        AudioStream audio = new AudioStream(input);
-                        AudioPlayer.player.start(audio);
-
-                    } catch (IOException ex) {
-                        Logger.getLogger(Battery.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+//                    try {
+//                        input = new FileInputStream(new File("src/Sounds/ebrahim.wav"));
+//                        AudioStream audio = new AudioStream(input);
+//                        AudioPlayer.player.start(audio);
+//
+//                    } catch (IOException ex) {
+//                        Logger.getLogger(Battery.class.getName()).log(Level.SEVERE, null, ex);
+//                    }
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();

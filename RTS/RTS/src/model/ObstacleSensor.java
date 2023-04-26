@@ -17,7 +17,6 @@ public class ObstacleSensor {
     
     
     public ObstacleSensor(WheelChair wheel) {
-        this.Obstacle = true;
         this.chair = wheel;
     }
     
@@ -31,12 +30,15 @@ public class ObstacleSensor {
 
     
     public void DetectObstacle(double distance) {
+        this.Obstacle = true;
         if (Obstacle) {
             if (distance < 3.0) {
+                this.Obstacle = true;
                 chair.getScreen().DisplayObstacle("!! Obstacle Detected !!");
                 this.chair.getBrake().decelerate();
                 chair.getScreen().DisplayDirection("Right");
             } else {
+                this.Obstacle = false;
                 chair.getScreen().DisplayObstacle("No Obstacle");
                 chair.getScreen().DisplayDirection("Forward");
             }
