@@ -23,9 +23,6 @@ public class SpeedSensor extends Thread{
         this.Speed = Speed;
     }
 
-    public SpeedSensor() {
-    }
-    
     public double randomSpeed(double min, double max) {
         if (min >= max) {
             throw new IllegalArgumentException("max must be greater than min");

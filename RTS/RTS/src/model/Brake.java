@@ -13,26 +13,13 @@ import java.util.logging.Logger;
  * @author mahmo
  */
 public class Brake extends Thread {
-//    boolean stopCommand;
-
     double speed;
     WheelChair chair;
 
-    public Brake() {
-    }
 
     public Brake(WheelChair chair) {
-//        this.stopCommand = stopCommand;
         this.chair = chair;
     }
-//
-//    public boolean isStopCommand() {
-//        return stopCommand;
-//    }
-//
-//    public void setStopCommand(boolean stopCommand) {
-//        this.stopCommand = stopCommand;
-//    }
 
     public void decelerate() {
         if (chair.getBattery().getPercentage() > 0.0 && chair.isEngineOn()) {
@@ -46,11 +33,7 @@ public class Brake extends Thread {
             }
         }
     }
-//    
-//    public double detectSpeed(){
-//        return 0.0;
-//    }
-//    
+ 
 
     @Override
     public void run() {

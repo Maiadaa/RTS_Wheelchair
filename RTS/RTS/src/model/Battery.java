@@ -42,7 +42,6 @@ public class Battery extends Thread{
     }
     public void MeasurePercentage(){
        if(this.Percentage == 0){
-//           chair.setState(false);
            return;
        }
         
@@ -56,6 +55,7 @@ public class Battery extends Thread{
     public void setStatus(String Status) {
         this.Status = Status;
     }
+    
     @Override
     public void run(){
         

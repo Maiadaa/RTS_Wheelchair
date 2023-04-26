@@ -21,8 +21,6 @@ import sun.audio.AudioStream;
  * @author mahmo
  */
 public class Button extends Thread {
-
-//    private boolean StartCommand;
     private boolean state;
     private WheelChair chair;
     private double currentBatteryPercentage = 100.0;
@@ -49,7 +47,6 @@ public class Button extends Thread {
             if (currentBatteryPercentage <= 0.0) {
                 currentBatteryPercentage = 100;
                 b1.setPercentage(this.currentBatteryPercentage);
-
                 b1.start();
             }
 
@@ -69,14 +66,7 @@ public class Button extends Thread {
             chair.getGui().getSpeedScreen().setText("0.0");
             chair.getSpeedSensor().setSpeed(0.0);
             this.currentBatteryPercentage = Double.parseDouble(chair.getGui().getBatteryScreen().getText());
-//            InputStream input;
-//            try {
-//                        input = new FileInputStream(new File("src/Sounds/motna.wav"));
-//                        AudioStream audio = new AudioStream(input);
-//                        AudioPlayer.player.start(audio);
-//                    } catch (IOException ex) {
-//                        Logger.getLogger(Battery.class.getName()).log(Level.SEVERE, null, ex);
-//          
+  
             if (currentBatteryPercentage == 0.0) {
                 chair.getGui().getChargingScreen().setText("CHARGING");
                 chair.getGui().getOnBtn().setEnabled(false);
@@ -93,22 +83,5 @@ public class Button extends Thread {
             chair.getGui().getBrakeBtn().setEnabled(false);
         }
     }
-//    public Button() {
-//    }
-//
-//    public Button(boolean StartCommand) {
-//        this.StartCommand = StartCommand;
-//    }
-//
-//    public boolean isStartCommand() {
-//        return StartCommand;
-//    }
-//
-//    public void setStartCommand(boolean StartCommand) {
-//        this.StartCommand = StartCommand;
-//    }
-//
-//    public void StartMovement(boolean command) {
-//
-//    }
+
 }

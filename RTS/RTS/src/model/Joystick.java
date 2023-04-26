@@ -27,11 +27,7 @@ public class Joystick
         this.Direction = "Forward";
         System.out.println("Engine Off");
     }
-//
-//    public Joystick(String Direction) {
-//        this.Direction = Direction;
-//    }
-//     
+  
 
     public void ControlMovement(String direction) {
         // change direction 
@@ -40,31 +36,8 @@ public class Joystick
         this.chair.getGui().getDirectionScreen().setText(direction);
     }
 
-//    public double DetectSpeed() {
-//        this.chair.getSpeedSensor().
-//        return 0;
-//
-//    }
-
     public String getDirection() {
         return Direction;
     }
-    
-//    @Override
-//    public void run()
-//    {
-//        while (true) {
-//            try {
-//                while(this.chair.getSpeedSensor().DetectSpeed() != 0){
-//                    this.sleep(3000);
-////                    ControlMovement(Direction);
-////                    Config.sendEvent(new ControlMovement(Direction));
-//                }
-//            } catch (InterruptedException ex) {
-//                Logger.getLogger(NavigationSensor.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//            
-//        }
-//    }
 
 }

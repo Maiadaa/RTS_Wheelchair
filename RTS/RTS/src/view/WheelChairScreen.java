@@ -139,7 +139,7 @@ public class WheelChairScreen extends javax.swing.JFrame {
     }
 
     public JTextField getObstacleScreen() {
-        return chargingScreen;
+        return this.obstacleScreen1;
     }
 
     public void setObstacleScreen(JTextField obstacleScreen) {
@@ -330,7 +330,6 @@ public class WheelChairScreen extends javax.swing.JFrame {
 
         obstacleScreen1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         obstacleScreen1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        obstacleScreen1.setText("No Obstacles");
         obstacleScreen1.setEnabled(false);
         obstacleScreen1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -399,9 +398,7 @@ public class WheelChairScreen extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(obstacleScreen1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(obstacleScreen1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(onBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -409,7 +406,6 @@ public class WheelChairScreen extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(batteryScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))

@@ -26,8 +26,8 @@ public class WheelChair {
     private Joystick joystick;
     private NavigationSensor navSensor;
     private ObstacleSensor obsSensor;
-    private Processor processor;
-    private Screen screen;
+//    private Processor processor;
+//    private Screen screen;
     private SpeedSensor speedSensor;
     private Wheel wheel;
 
@@ -45,8 +45,8 @@ public class WheelChair {
         this.navSensor = new NavigationSensor(this);
 //        navSensor.start();
         this.obsSensor = new ObstacleSensor();
-        this.processor = new Processor();
-        this.screen = new Screen();
+//        this.processor = new Processor();
+//        this.screen = new Screen();
         this.speedSensor = new SpeedSensor();
         this.wheel = new Wheel(this);
     }
@@ -89,14 +89,14 @@ public class WheelChair {
     public ObstacleSensor getObsSensor() {
         return obsSensor;
     }
-
-    public Processor getProcessor() {
-        return processor;
-    }
-
-    public Screen getScreen() {
-        return screen;
-    }
+//
+//    public Processor getProcessor() {
+//        return processor;
+//    }
+//
+//    public Screen getScreen() {
+//        return screen;
+//    }
 
     public SpeedSensor getSpeedSensor() {
         return speedSensor;

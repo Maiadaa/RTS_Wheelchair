@@ -76,7 +76,6 @@ public class NavigationSensor extends Thread {
                 this.chair.getGui().getObstacleScreen().setText("Obstacle Detected");
                 this.chair.getBrake().decelerate();
                 this.chair.getJoystick().ControlMovement("Right");
-//              wheel.getGui().getObstacle().setText("ObstacleDetected");
             } else {
                 this.chair.getGui().getObstacleScreen().setText("No Obstacle");
                 this.chair.getJoystick().ControlMovement("Forward");
@@ -85,13 +84,6 @@ public class NavigationSensor extends Thread {
     }
     
     public void measureDistance() {
-//        double obLoc = obSensor.DetectObstacleLocation(20,60);
-//        double myLoc = detectLocation(15,60);
-//        if(obLoc > myLoc)
-//        {
-//            Config.sendEvent(new MeasureDistance(obLoc-myLoc));
-//        }
-//        return 0;
         distanceToObstacle = random(1, 5);
         DetectObstacle(distanceToObstacle);
     }
@@ -103,14 +95,6 @@ public class NavigationSensor extends Thread {
                 while (this.chair.getSpeedSensor().DetectSpeed() != 0) {
                     this.sleep(3000);
                     measureDistance();
-                    InputStream input;
-                    try {
-                        input = new FileInputStream(new File("src/Sounds/haseb kda final.wav"));
-                        AudioStream audio = new AudioStream(input);
-                        AudioPlayer.player.start(audio);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Battery.class.getName()).log(Level.SEVERE, null, ex);
-                    }
                     Config.sendEvent(new MeasureDistance(distanceToObstacle));
                 }
             } catch (InterruptedException ex) {
