@@ -6,18 +6,27 @@ package model;
 
 import events.MeasureBatteryPercentage;
 import events.PowerEvent;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import rts.Config;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
 
 /**
  *
  * @author mahmo
  */
-public class Button{
+public class Button extends Thread {
 
 //    private boolean StartCommand;
     private boolean state;
     private WheelChair chair;
     private double currentBatteryPercentage = 100.0;
+
     public Button(WheelChair chair) {
         this.state = false;
         this.chair = chair;
@@ -37,7 +46,13 @@ public class Button{
             Battery b1 = new Battery(chair, currentBatteryPercentage);
             b1.setPercentage(this.currentBatteryPercentage);
             b1.start();
-            
+            if (currentBatteryPercentage <= 0.0) {
+                currentBatteryPercentage = 100;
+                b1.setPercentage(this.currentBatteryPercentage);
+
+                b1.start();
+            }
+
         } else {
             chair.getGui().getOnBtn().setEnabled(true);
             chair.getGui().getOffBtn().setEnabled(false);
@@ -52,8 +67,23 @@ public class Button{
             chair.getGui().getObstacleScreen().setText("No Obstacle");
             chair.getObsSensor().setObstacle(false);
             chair.getGui().getSpeedScreen().setText("0.0");
-            chair.getSpeedSensor().setSpeed(0.0); 
+            chair.getSpeedSensor().setSpeed(0.0);
             this.currentBatteryPercentage = Double.parseDouble(chair.getGui().getBatteryScreen().getText());
+//            InputStream input;
+//            try {
+//                        input = new FileInputStream(new File("src/Sounds/motna.wav"));
+//                        AudioStream audio = new AudioStream(input);
+//                        AudioPlayer.player.start(audio);
+//                    } catch (IOException ex) {
+//                        Logger.getLogger(Battery.class.getName()).log(Level.SEVERE, null, ex);
+//          
+            if (currentBatteryPercentage == 0.0) {
+                chair.getGui().getChargingScreen().setText("CHARGING YAD");
+                chair.getGui().getOnBtn().setEnabled(false);
+                Thread.sleep(5000);
+                chair.getGui().getChargingScreen().setText("");
+                chair.getGui().getOnBtn().setEnabled(true);
+            }
         }
     }
 
