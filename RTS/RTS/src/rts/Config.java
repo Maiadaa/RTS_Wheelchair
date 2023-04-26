@@ -13,7 +13,6 @@ import events.ControlMovement;
 import events.ControlSpeed;
 import events.Decelerate;
 import events.DetectSpeed;
-import events.DetectLocationCoordinates;
 import events.DetectObstacle;
 import events.MeasureBatteryPercentage;
 import events.MeasureDistance;
@@ -33,7 +32,6 @@ public class Config {
         engine.getEPAdministrator().getConfiguration().addEventType(ControlSpeed.class);
         engine.getEPAdministrator().getConfiguration().addEventType(Decelerate.class);
         engine.getEPAdministrator().getConfiguration().addEventType(DetectSpeed.class);
-        engine.getEPAdministrator().getConfiguration().addEventType(DetectLocationCoordinates.class);
         engine.getEPAdministrator().getConfiguration().addEventType(DetectObstacle.class);
         engine.getEPAdministrator().getConfiguration().addEventType(MeasureBatteryPercentage.class);
         engine.getEPAdministrator().getConfiguration().addEventType(MeasureDistance.class);

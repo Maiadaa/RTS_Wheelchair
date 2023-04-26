@@ -4,7 +4,6 @@
  */
 package rts;
 
-import events.DetectLocationCoordinates;
 import events.PowerEvent;
 import model.SpeedSensor;
 import model.Battery;
