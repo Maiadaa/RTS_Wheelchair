@@ -21,11 +21,6 @@ import rts.Config;
  * @author mahmo
  */
 public class NavigationSensor extends Thread {
-
-    private String currentCoordinates;
-    private boolean Obstacle = true;
-
-    private String Destination;
     private double distanceToObstacle;
     private WheelChair chair;
 
@@ -49,26 +44,18 @@ public class NavigationSensor extends Thread {
         this.chair = chair;
     }
 
-    public String getCurrentCoordinates() {
-        return currentCoordinates;
-    }
-
-    public String getDestination() {
-        return Destination;
-    }
-
     public double getDistanceToObstacle() {
         return distanceToObstacle;
     }
-
-    public double detectLocation(int min, int max) {
-        if (min > max) {
-            throw new IllegalArgumentException("max must be greater than min");
-        } else {
-            Random r = new Random();
-            return min + (max - min) * r.nextDouble();
-        }
-    }
+//
+//    public double detectLocation(int min, int max) {
+//        if (min > max) {
+//            throw new IllegalArgumentException("max must be greater than min");
+//        } else {
+//            Random r = new Random();
+//            return min + (max - min) * r.nextDouble();
+//        }
+//    }
     
     public void measureDistance() {
         distanceToObstacle = random(1, 5);

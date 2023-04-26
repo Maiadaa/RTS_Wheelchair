@@ -13,7 +13,6 @@ import java.util.logging.Logger;
  * @author mahmo
  */
 public class Brake extends Thread {
-    double speed;
     WheelChair chair;
 
 

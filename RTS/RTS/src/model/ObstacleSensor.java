@@ -29,9 +29,6 @@ public class ObstacleSensor {
         this.Obstacle = Obstacle;
     }
 
-    public boolean isObstacle() {
-        return Obstacle;
-    }
     
     public void DetectObstacle(double distance) {
         if (Obstacle) {

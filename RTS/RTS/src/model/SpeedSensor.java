@@ -35,12 +35,6 @@ public class SpeedSensor extends Thread{
         return Speed;
     }
     
-    public String DisplaySpeed(double Speed){
-        
-        return null;
-        
-    }
-
     public double DetectSpeed(){
         double speed;
         Config.sendEvent(new DetectSpeed(Speed));

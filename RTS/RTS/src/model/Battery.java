@@ -21,7 +21,6 @@ import sun.audio.AudioStream;
  */
 public class Battery extends Thread{
     private double Percentage = 100;
-    private String Status; 
     private WheelChair chair;
 
     public Battery(WheelChair chair) {
@@ -37,9 +36,6 @@ public class Battery extends Thread{
         return Percentage;
     }
 
-    public String getStatus() {
-        return Status;
-    }
     public void MeasurePercentage(){
        if(this.Percentage == 0){
            return;
@@ -52,10 +48,6 @@ public class Battery extends Thread{
         this.Percentage = Percentage;
     }
 
-    public void setStatus(String Status) {
-        this.Status = Status;
-    }
-    
     @Override
     public void run(){
         

@@ -14,7 +14,6 @@ import java.util.logging.Logger;
  */
 public class Wheel extends Thread{
     boolean stopCommand;
-    double speed;
     WheelChair chair;
     
     
@@ -54,17 +53,7 @@ public class Wheel extends Thread{
             }
          }
     }
-    
-    private int random(int min, int max) {
         
-        if (min >= max) {
-            throw new IllegalArgumentException("max must be greater than min");
-        }
-        
-        Random r = new Random();
-        return r.nextInt((max - min) + 1) + min;
-    }
-    
     @Override
     public void run()
     {
