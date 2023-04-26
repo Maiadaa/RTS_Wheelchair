@@ -78,7 +78,7 @@ public class Button extends Thread {
 //                        Logger.getLogger(Battery.class.getName()).log(Level.SEVERE, null, ex);
 //          
             if (currentBatteryPercentage == 0.0) {
-                chair.getGui().getChargingScreen().setText("CHARGING YAD");
+                chair.getGui().getChargingScreen().setText("CHARGING");
                 chair.getGui().getOnBtn().setEnabled(false);
                 Thread.sleep(5000);
                 chair.getGui().getChargingScreen().setText("");

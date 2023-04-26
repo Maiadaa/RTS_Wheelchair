@@ -69,13 +69,18 @@ public class Battery extends Thread{
                 
                 if(Percentage <= 0)
                 {
-//                  chair.getGui().getBatteryScreen().setText("Charge yad");
                     chair.setState(false);
                     InputStream input;
                     try {
                         input = new FileInputStream(new File("src/Sounds/ebrahim.wav"));
                         AudioStream audio = new AudioStream(input);
                         AudioPlayer.player.start(audio);
+                        
+                         Thread.sleep(2000);
+                MeasurePercentage();
+                System.out.println(Percentage);
+                Config.sendEvent(new MeasureBatteryPercentage(100));
+                
                     } catch (IOException ex) {
                         Logger.getLogger(Battery.class.getName()).log(Level.SEVERE, null, ex);
                     }
