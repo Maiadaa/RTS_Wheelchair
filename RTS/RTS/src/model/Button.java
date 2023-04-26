@@ -42,10 +42,12 @@ public class Button extends Thread {
             chair.getGui().getLeftBtn().setEnabled(true);
             chair.getGui().getRightBtn().setEnabled(true);
             Battery b1 = new Battery(chair, currentBatteryPercentage);
-            b1.setPercentage(this.currentBatteryPercentage);
-            b1.start();
+           
             if (currentBatteryPercentage <= 0.0) {
                 currentBatteryPercentage = 100;
+                b1.setPercentage(this.currentBatteryPercentage);
+                b1.start();
+            }else{
                 b1.setPercentage(this.currentBatteryPercentage);
                 b1.start();
             }

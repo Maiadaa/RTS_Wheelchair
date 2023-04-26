@@ -76,11 +76,6 @@ public class Battery extends Thread{
 //                        AudioStream audio = new AudioStream(input);
 //                        AudioPlayer.player.start(audio);
                         
-                         Thread.sleep(2000);
-                MeasurePercentage();
-                System.out.println(Percentage);
-                Config.sendEvent(new MeasureBatteryPercentage(100));
-                
 //                    } catch (IOException ex) {
 //                        Logger.getLogger(Battery.class.getName()).log(Level.SEVERE, null, ex);
 //                    }
