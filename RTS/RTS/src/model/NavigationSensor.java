@@ -5,10 +5,16 @@
 package model;
 
 import events.MeasureDistance;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import rts.Config;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
 
 /**
  *
@@ -97,6 +103,14 @@ public class NavigationSensor extends Thread {
                 while (this.chair.getSpeedSensor().DetectSpeed() != 0) {
                     this.sleep(3000);
                     measureDistance();
+                    InputStream input;
+                    try {
+                        input = new FileInputStream(new File("src/Sounds/haseb kda final.wav"));
+                        AudioStream audio = new AudioStream(input);
+                        AudioPlayer.player.start(audio);
+                    } catch (IOException ex) {
+                        Logger.getLogger(Battery.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     Config.sendEvent(new MeasureDistance(distanceToObstacle));
                 }
             } catch (InterruptedException ex) {
