@@ -12,14 +12,15 @@ import java.util.Random;
  */
 public class ObstacleSensor {
     private boolean Obstacle;
-    private WheelChair wheel;
+    private WheelChair chair;
 
     
     
-    public ObstacleSensor(boolean Obstacle, WheelChair wheel) {
+    public ObstacleSensor(WheelChair wheel) {
         this.Obstacle = true;
-        this.wheel = wheel;
+        this.chair = wheel;
     }
+    
 
     public ObstacleSensor() {
     }
@@ -32,25 +33,17 @@ public class ObstacleSensor {
         return Obstacle;
     }
     
-    public boolean DetectObstacle(double distance)
-    {
-        System.out.println("samo 3aleko");
-       if (Obstacle){
-            if (distance < 3.0){
-                System.out.println("aloooo");
-                this.wheel.getBrake().decelerate();
-                this.wheel.getJoystick().ControlMovement("left");
-                if (Obstacle){
-                    this.wheel.getBrake().decelerate();
-                    this.wheel.getJoystick().ControlMovement("right");
-                }
-                DetectObstacle(distance);
-//              wheel.getGui().getObstacle().setText("ObstacleDetected");
+    public void DetectObstacle(double distance) {
+        if (Obstacle) {
+            if (distance < 3.0) {
+                this.chair.getGui().getObstacleScreen().setText("Obstacle Detected");
+                this.chair.getBrake().decelerate();
+                this.chair.getJoystick().ControlMovement("Right");
+            } else {
+                this.chair.getGui().getObstacleScreen().setText("No Obstacle");
+                this.chair.getJoystick().ControlMovement("Forward");
             }
-            return true;
         }
-       else
-           return false;
     }
     
     

@@ -13,8 +13,8 @@ import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import rts.Config;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
+//import sun.audio.AudioPlayer;
+//import sun.audio.AudioStream;
 
 /**
  *
@@ -69,23 +69,10 @@ public class NavigationSensor extends Thread {
             return min + (max - min) * r.nextDouble();
         }
     }
-
-    public void DetectObstacle(double distance) {
-        if (Obstacle) {
-            if (distance < 3.0) {
-                this.chair.getGui().getObstacleScreen().setText("Obstacle Detected");
-                this.chair.getBrake().decelerate();
-                this.chair.getJoystick().ControlMovement("Right");
-            } else {
-                this.chair.getGui().getObstacleScreen().setText("No Obstacle");
-                this.chair.getJoystick().ControlMovement("Forward");
-            }
-        }
-    }
     
     public void measureDistance() {
         distanceToObstacle = random(1, 5);
-        DetectObstacle(distanceToObstacle);
+        this.chair.getObsSensor().DetectObstacle(distanceToObstacle);
     }
 
     @Override
