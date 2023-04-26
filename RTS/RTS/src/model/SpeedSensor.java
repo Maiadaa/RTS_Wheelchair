@@ -4,7 +4,7 @@
  */
 package model;
 import rts.Config;
-import events.DetectCarSpeed;
+import events.DetectSpeed;
 import com.espertech.esper.client.EPServiceProvider;
 import com.espertech.esper.client.EPServiceProviderManager;
 import java.util.Random;
@@ -43,7 +43,7 @@ public class SpeedSensor extends Thread{
 
     public double DetectSpeed(){
         double speed;
-        Config.sendEvent(new DetectCarSpeed(Speed));
+        Config.sendEvent(new DetectSpeed(Speed));
         return Speed;
     }
     

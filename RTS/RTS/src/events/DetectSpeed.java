@@ -8,11 +8,11 @@ package events;
  *
  * @author PC
  */
-public class DetectCarSpeed {
+public class DetectSpeed {
     
     private double speed;
 
-    public DetectCarSpeed(double speed) {
+    public DetectSpeed(double speed) {
         this.speed = speed;
     }
 

@@ -12,7 +12,7 @@ import events.Accelerate;
 import events.ControlMovement;
 import events.ControlSpeed;
 import events.Decelerate;
-import events.DetectCarSpeed;
+import events.DetectSpeed;
 import events.DetectLocationCoordinates;
 import events.DetectObstacle;
 import events.MeasureBatteryPercentage;
@@ -32,7 +32,7 @@ public class Config {
         engine.getEPAdministrator().getConfiguration().addEventType(ControlMovement.class);
         engine.getEPAdministrator().getConfiguration().addEventType(ControlSpeed.class);
         engine.getEPAdministrator().getConfiguration().addEventType(Decelerate.class);
-        engine.getEPAdministrator().getConfiguration().addEventType(DetectCarSpeed.class);
+        engine.getEPAdministrator().getConfiguration().addEventType(DetectSpeed.class);
         engine.getEPAdministrator().getConfiguration().addEventType(DetectLocationCoordinates.class);
         engine.getEPAdministrator().getConfiguration().addEventType(DetectObstacle.class);
         engine.getEPAdministrator().getConfiguration().addEventType(MeasureBatteryPercentage.class);
