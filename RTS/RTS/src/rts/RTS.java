@@ -65,8 +65,8 @@ public class RTS {
                 Config.createStatement("select direction from ControlMovement")
                 .setSubscriber(new Object() {
                     public void update(String direction) {
-//                        chair.getJoystick().ControlMovement(direction);
-                        chair.getScreen().DisplayDirection(direction);
+                        chair.getJoystick().ControlMovement(direction);
+//                        chair.getScreen().DisplayDirection(direction);
                     }
                 });
         
@@ -99,8 +99,8 @@ public class RTS {
 //        
         SpeedSensor s1 = new SpeedSensor();
         NavigationSensor n1 = new NavigationSensor(chair);
-        Battery b1 = new Battery(chair);
-        b1.start();
+//        Battery b1 = new Battery(chair);
+//        b1.start();
         s1.start();
         n1.start();
                 

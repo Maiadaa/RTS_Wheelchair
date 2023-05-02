@@ -33,14 +33,18 @@ public class ObstacleSensor {
         this.Obstacle = true;
         if (Obstacle) {
             if (distance < 3.0) {
+//                 this.chair.getGui().getObstacleScreen().setText("Obstacle Detected");
                 this.Obstacle = true;
                 chair.getScreen().DisplayObstacle("!! Obstacle Detected !!");
                 this.chair.getBrake().decelerate();
-                chair.getScreen().DisplayDirection("Right");
+                this.chair.getJoystick().ControlMovement("Right");
+//                chair.getScreen().DisplayDirection("Right");
             } else {
                 this.Obstacle = false;
+//                 this.chair.getGui().getObstacleScreen().setText("No Obstacle");
+                this.chair.getJoystick().ControlMovement("Forward");
                 chair.getScreen().DisplayObstacle("No Obstacle");
-                chair.getScreen().DisplayDirection("Forward");
+//                chair.getScreen().DisplayDirection("Forward");
             }
         }
     }
